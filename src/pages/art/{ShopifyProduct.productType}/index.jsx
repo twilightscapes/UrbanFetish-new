@@ -13,12 +13,12 @@ export default function ProductTypeIndex({
 }) {
   return (
     <Layout>
-      <Seo title={`Twilightscapes: ${productType}`} />
+      <Seo title={`Urban Fetish: ${productType}`} />
       <h1 className={title}>{productType}</h1>
       <ProductListing products={products.nodes} />
       {products.pageInfo.hasNextPage && (
         <MoreButton to={`/search?p=${slugify(productType)}#more`}>
-          More Twilightscapes
+          More Urban Fetish
         </MoreButton>
       )}
     </Layout>

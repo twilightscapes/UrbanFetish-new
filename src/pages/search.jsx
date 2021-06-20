@@ -161,7 +161,7 @@ function SearchPage({
 
 
 
-<Seo title={`Search Twilightscapes Vault`} />
+<Seo title={`Search The Vault`} />
       <h1 className={visuallyHidden}>Search Results</h1>
       <div className={main}>
         <div className={search} aria-hidden={modalOpen}>

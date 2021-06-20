@@ -41,7 +41,7 @@ The materials on this website(s) also known as toddlambert.com, twilightsapes.co
 
 
 
-<p>In no event shall Todd Lambert or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption,) arising out of the use or inability to use the materials on Todd Lambert’s Internet site(s), even if Todd Lambert or a Twilightscapes authorized representative has been notified orally or in writing of the possibility of such damage. Because some jurisdictions do not allow limitations on implied warranties, or limitations of liability for consequential or incidental damages, these limitations may not apply to you.</p>
+<p>In no event shall Todd Lambert or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption,) arising out of the use or inability to use the materials on Todd Lambert’s Internet site(s), even if Todd Lambert or a Urban Fetish authorized representative has been notified orally or in writing of the possibility of such damage. Because some jurisdictions do not allow limitations on implied warranties, or limitations of liability for consequential or incidental damages, these limitations may not apply to you.</p>
 
 
 
@@ -93,7 +93,7 @@ The materials on this website(s) also known as toddlambert.com, twilightsapes.co
 
 
 
-<p>Any claim relating to the twilightscapes.com web site(s) shall be governed by the laws of the State of Texas without regard to its conflict of law provisions.</p>
+<p>Any claim relating to the UrbanFetish.com web site(s) shall be governed by the laws of the State of Texas without regard to its conflict of law provisions.</p>
 
 
 

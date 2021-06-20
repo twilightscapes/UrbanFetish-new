@@ -63,7 +63,7 @@ left:'0', right:'0', display:'flex', justifyContent:'center', alignItems:'center
     buttonText="OK Got it"
 	buttonStyle={{ background: "transparent", textDecoration:'underline', textAlign:'center', fontSize: "16px", bottom:'10px', position:'absolute', display:'flex', alignContent:'center', color:'inherit', }}
     expires={1}
-    cookieName="twilightscapes.com-install-discount-cookie"
+    cookieName="Urbanfetish.com-install-discount-cookie"
 >
 
 
@@ -74,7 +74,7 @@ left:'0', right:'0', display:'flex', justifyContent:'center', alignItems:'center
 
 
 	
-	<p style={{textAlign:'center', fontSize:'clamp(1.6rem, -0.875rem + 7.333vw, 2.5rem)', padding:'0', margin:'0 0 10px 0', overflowWrap:'break-word'}}>Install Twilightscapes <br /> <strong>Get 30% off</strong></p>
+	<p style={{textAlign:'center', fontSize:'clamp(1.6rem, -0.875rem + 7.333vw, 2.5rem)', padding:'0', margin:'0 0 10px 0', overflowWrap:'break-word'}}>Install UrbanFetish <br /> <strong>Get 30% off</strong></p>
 	
 	{/* <p style={{fontSize:'100%', textAlign:'left',}}>
   Twilightscapes has app functionality. Add it to your home screen to get added features, exclusive content, and fullscreen capability. </p> */}

@@ -25,7 +25,7 @@ left:'0', right:'0', display:'flex', justifyContent:'center', alignItems:'center
     contentStyle={{margin:'0', padding:'0', border:'0px solid red'}}
 
     expires={364}
-    cookieName="Twilightscapes.com-site-pref-cookie"
+    cookieName="Urbanfetish.com-site-pref-cookie"
 >
 
 

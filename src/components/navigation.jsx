@@ -21,7 +21,7 @@ export function Navigation({ className }) {
         className=""
         to="/art/"
         activeClassName={activeLink}
-        title="View All Twilightscapes"
+        title="View All Urban Fetish"
         style={{
           background:'#111',
           color:'#fff',
@@ -29,7 +29,7 @@ export function Navigation({ className }) {
           borderRadius:'7px',
         }}
       >
-        View All Twilightscapes
+        View All Urban Fetish
       </Link> */}
       {/* <Link
         key="All"
@@ -44,7 +44,7 @@ export function Navigation({ className }) {
           key={name}
           className={navLink}
           to={`/art/${slugify(name)}`}
-          title="View All Twilightscapes"
+          title="View All Urban Fetish"
           activeClassName={activeLink}
           style={{display:'none'}}
         >
