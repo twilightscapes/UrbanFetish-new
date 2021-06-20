@@ -1,0 +1,21 @@
+.addToCart {
+  display: flex;
+  flex-direction: row;
+  color: var(--text-color-inverted);
+  background-color: var(--primary);
+  align-self: center;
+  padding: var(--space-sm) var(--space-xl);
+  border-radius: var(--radius-md);
+  font-weight: var(--bold);
+  align-items: center;
+  height: var(--size-input);
+  justify-content:center;
+  transition: var(--transition);
+  width:100%;
+
+  text-align:center;
+}
+
+.addToCart:hover {
+  box-shadow: var(--shadow);
+}
