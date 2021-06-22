@@ -195,7 +195,7 @@ right:'', border:'0px solid yellow', justifyContent:'center', width:'', textAlig
 
 
 
-<div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
+{/* <div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
 
 <p style={{textAlign:'center', margin:'2rem 0 0 0'}}>GET ALL YOUR FAVORITES NOW</p>
 
@@ -207,7 +207,7 @@ right:'', border:'0px solid yellow', justifyContent:'center', width:'', textAlig
   ONLY PAY<br /> FOR TWO
   </span>
 </div>
-</div>
+</div> */}
 
 
 
