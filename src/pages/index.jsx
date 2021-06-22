@@ -42,7 +42,7 @@ const CustomBox = styled.div`
 
 export const query = graphql`
   query {
-    shopifyCollection(handle: { eq: "digitalart" }) {
+    shopifyCollection(handle: { eq: "urbanfetish" }) {
       products {
         ...ProductCard
       }
