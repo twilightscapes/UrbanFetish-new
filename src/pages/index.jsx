@@ -2,8 +2,8 @@
 
 import * as React from "react"
 import { graphql, Link } from "gatsby"
-import { Seo } from "../components/seo1"
-import { Layout } from "../components/layout1"
+import { Seo } from "../components/seo"
+import { Layout } from "../components/layout"
 import Image from '../components/Image'
 import { ProductListing } from "../components/product-listing"
 import Social from "../components/social"
@@ -24,16 +24,13 @@ import styled from "styled-components"
 const CustomBox = styled.div`
 
 
-
-
-
-
-
-
-
-
-@media (min-width: 58em) {
-
+.intro:before{
+	content: "A Fetish For Decay";
+position:absolute;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size:5vw; color:#f8f8fc; text-shadow: 12px 7px 15px 12px black;
 }
 
 
@@ -226,7 +223,7 @@ right:'', border:'0px solid yellow', justifyContent:'center', width:'', textAlig
                 width:'',
                 backgroundColor:'#000 !important'
               }}
-              to="/vault/gallery1/"
+              to="/vault/favorites/"
             >
               View More {" "}
               <span className="icon -right" style={{paddingLeft:'1rem'}}>

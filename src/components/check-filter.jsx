@@ -36,7 +36,7 @@ export function CheckFilter({
   }
 
   return (
-    <details open={open} className={filter} style={{width:'10vw', height:'100vh', overflowX :'hidden', border:'0px solid red'}}>
+    <details open={open} className={filter} style={{width:'100%', minWidth:'200px', height:'70vh', overflowX :'hidden', border:'0px solid red'}}>
       {name && (
         <summary>
           <div className={summary}>

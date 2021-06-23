@@ -1,6 +1,6 @@
 import * as React from "react"
 import { graphql, useStaticQuery } from 'gatsby'
-import { Layout } from "../../components/layout1"
+import { Layout } from "../../components/layout"
 // import Image from '../../../components/Image'
 // import { RiSendPlane2Line } from "react-icons/ri"
 

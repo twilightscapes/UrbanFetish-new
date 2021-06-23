@@ -2,7 +2,7 @@ import * as React from "react"
 import { SkipNavContent, SkipNavLink } from "./skip-nav"
 // import { Header } from "./header"
 import { Footer } from "./footer"
-import { Seo } from "./seo1"
+import { Seo } from "./seo"
 import 'fontsource-hammersmith-one'
 import { Link } from 'gatsby'
 import { ModalRoutingContext } from 'gatsby-plugin-modal-routing-3'
@@ -13,8 +13,8 @@ import { Toast } from "./toast"
 import { ImArrowRight } from "react-icons/im"
 import { CartButton } from "./cart-button"
 import SearchIcon from "../icons/search"
-import Consent from '../components/Consent'
-import Install from '../components/install-discount'
+import Consent from './Consent'
+import Install from './install-discount'
 
 
 export function Layout({ children }) {
@@ -101,13 +101,17 @@ export function Layout({ children }) {
       </li> */}
 
       <li>
-              <Link className="navbar-item txtshadow" to="/art/">
+              {/* <Link className="navbar-item txtshadow" to="/nft/">
                 Gallery <span>View Photos</span>
+              </Link> */}
+              <Link className="navbar-item txtshadow" to="/nft/">
+                NFT Collectibles <span>Limited Editions</span>
               </Link>
+
       </li>
 
       <li>
-              <Link className="navbar-item txtshadow" to="/vault/gallery1/">
+              <Link className="navbar-item txtshadow" to="/vault/favorites/">
                 The Vault <span>View the full archives</span>
               </Link>
       </li>
@@ -187,7 +191,7 @@ export function Layout({ children }) {
 
 
 
-      <SkipNavContent>{children}</SkipNavContent>
+      <SkipNavContent className="intro">{children}</SkipNavContent>
       
       <br /><br />
       <Consent />

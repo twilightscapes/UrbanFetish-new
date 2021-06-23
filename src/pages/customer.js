@@ -1,8 +1,8 @@
 import * as React from "react"
-import { Layout } from "../components/layout1"
+import { Layout } from "../components/layout"
 import Image from '../components/Image'
 import { RiSendPlane2Line } from "react-icons/ri"
-import Seo from "../components/seo1"
+import Seo from "../components/seo"
 import { Link } from "gatsby"
 
 

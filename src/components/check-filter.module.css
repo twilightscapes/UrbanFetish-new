@@ -18,7 +18,7 @@
 
 .filter label.selectedLabel {
   font-weight: var(--semibold);
-  color: var(--text-color);
+  color: #FA02B7;
 }
 
 .filter summary {

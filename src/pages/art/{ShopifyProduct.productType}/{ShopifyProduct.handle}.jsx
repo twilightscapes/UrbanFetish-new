@@ -1,6 +1,6 @@
 import * as React from "react"
 import { graphql, Link } from "gatsby"
-import { Layout } from "../../../components/layout1"
+import { Layout } from "../../../components/layout"
 import isEqual from "lodash.isequal"
 import { GatsbyImage, getSrc } from "gatsby-plugin-image"
 import Image from '../../../components/Image'
@@ -9,7 +9,7 @@ import { StoreContext } from "../../../context/store-context"
 import { AddToCart } from "../../../components/add-to-cart"
 import { NumericInput } from "../../../components/numeric-input"
 import { formatPrice } from "../../../utils/format-price"
-import { Seo } from "../../../components/seo1"
+import { Seo } from "../../../components/seo"
 import { CgChevronRight as ChevronIcon } from "react-icons/cg"
 import { MdBrandingWatermark, MdCropFree } from "react-icons/md"
 import { RiSecurePaymentLine, RiSendPlane2Line } from "react-icons/ri"
@@ -17,6 +17,7 @@ import { RiSecurePaymentLine, RiSendPlane2Line } from "react-icons/ri"
 import GoBack from "../../../components/goBack"
 
 // import { Link } from 'gatsby-plugin-modal-routing'
+
 
 import { GiRoyalLove } from "react-icons/gi"
 import { FaLockOpen } from "react-icons/fa"
@@ -55,7 +56,14 @@ import styled from 'styled-components'
 const CustomBox = styled.div`
 
 
-
+.intro:before{
+	content: "Damn";
+position:absolute;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size:380%; color:#f8f8fc; text-shadow: 12px 7px 15px 12px black;
+}
 
 @media (max-width: 48rem) {
 .flexcheek{width:100% !important;}
@@ -166,9 +174,18 @@ export default function Product({ data: { product, suggestions } }) {
                     <li
                       key={`product-image-${image.id}`}
                       className={productImageListItem}
-                      style={{display:'flex', alignContent:'center', justifyContent:'center'}}
+                      style={{display:'flex', alignContent:'center', justifyContent:'center', position:'relative'}}
                     >
-                      <div className="vert" style={{}}><InnerImageZoom src={getSrc(firstImage.gatsbyImageData)} objectFit="contain" /></div>
+                      
+
+                      {/* <div className="vert" style={{height:'', background:'url( {spinner} )', position:'relative' }}> */}
+                      <div className="vert" style={{position:'relative' }}>
+                        
+                        <InnerImageZoom src={getSrc(firstImage.gatsbyImageData)} objectFit="contain" loading={index === 0 ? "eager" : "lazy"} />
+
+                      {/* <img className="spinned" src={spinner} alt="Twilightscapes" style={{height:'100%', width:'100%', position:'fixed', top:'0', left:'0',  zIndex:'-1', border:'1px solid yellow', display:'block'}} /> */}
+
+                      </div>
 
                       {/* <GatsbyImage
                         objectFit="contain"
@@ -210,6 +227,10 @@ export default function Product({ data: { product, suggestions } }) {
             </div>
             <h1 className={header}>{title}</h1>
             <p className={productDescription}>{description}</p>
+
+
+
+            <span className="print">
             <h2 className={priceValue}>
              <strong style={{fontSize:'30px'}}>{price}</strong> <br /> High-Res Print Ready Art
             </h2>
@@ -262,7 +283,7 @@ export default function Product({ data: { product, suggestions } }) {
                 ))}
               </span>
             </div>
-
+            </span>
      
 
 
@@ -293,7 +314,7 @@ export default function Product({ data: { product, suggestions } }) {
            Edited and production output to Tiff file format<br /> <br />
            Typical file size 30-50MB<br /> <br />
            Average dimensions range from 4988×3325 to 5481x3653 or greater<br /> <br />
-           All Urban Fetish art is shot using the latest state-of-the-art equipment and lenses.
+           All Urban Fetish images are shot using the latest state-of-the-art equipment and lenses.
            <br /><br />Canon 5D series, Sony A7R series and Sony A7S series.
            </p>
            
@@ -394,7 +415,7 @@ Rights-managed content is licensed for specific types of private use, and limits
 
 </div>
 
-            <div className="flexcheek" style={{border:'0px solid yellow', width:'30%'}}>
+            <div className="flexcheek sidebart" style={{border:'0px solid yellow', width:'30%'}}>
 
             <div style={{textAlign:'center', margin:'0 0 30px 0'}}>
             <GoBack />
@@ -433,12 +454,6 @@ Rights-managed content is licensed for specific types of private use, and limits
 
 <br />
 <br />
-
-
-
-
-
-
 <h3 style={{fontSize:'130%', fontWeight:'bold', textAlign:'center'}}>Other projects by Todd</h3>
 
 <a href="https://twilightscapes.com" target="_blank" rel="noopener noreferrer" style={{textDecoration:'none', color:'inherit', lineHeight:'1.7rem'}}>
@@ -450,8 +465,6 @@ Rights-managed content is licensed for specific types of private use, and limits
  Experience a new style of landscape photography all through the eyes of Todd Lambert. Explore the unusual and see the Western States like you&apos;ve never seen them before.
  
  <h5 style={{textAlign:'center',}}>Visit Twilightscapes.com</h5></a>
-
- 
 
 
             </div>

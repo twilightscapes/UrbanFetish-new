@@ -7,6 +7,18 @@ body {
 body,h1,h2,h3,h4,.h1,.h2,.h3,.h4, #menu, .header .menu-icon:before, input.special, .intro:after, .intro:before, .scrolldown, label, .font, .gatsby-image-wrapper, .full-width-image:after{font-family: Hammersmith One,lucida grande,lucida sans unicode,Tahoma,Sans-Serif; /* font-style: italic; */}
 
 
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+
 .gatsby-image-wrapper {
   margin: auto;
 }
@@ -127,8 +139,8 @@ body,h1,h2,h3,h4,.h1,.h2,.h3,.h4, #menu, .header .menu-icon:before, input.specia
     -webkit-gradient(linear, left top, left bottom, from(#ff0000), to(#ff0000)) !important;
   background-image: linear-gradient(#ff0000, #ff0000), linear-gradient(#ff0000, #ff0000) !important;
   background-size: 100% 2px, 2px 100% !important;
-  -webkit-transform: rotate(45deg) !important;
-  /* transform: rotate(45deg) !important; */
+  -webkit-transform: rotate(45deg) !important; 
+ transform: rotate(45deg) !important;
   /* display:block  !important;
   border:1px solid blue;
   position:absolute; top:0; left:0; right:0; z-index: 2; */
@@ -332,7 +344,7 @@ footer{background-color: #000; padding:.1rem 0rem; display:flex; justify-content
 
 body.carto .sidebarIconToggle, body.carto #sidebarMenu, body.carto .social-icons, body.carto .backdrop1{  display: none !important;}
 
-body.carto{overflow-y: hidden !important;}
+/* body.carto{overflow-y: hidden !important;} */
 
 
 .navbar-item{display:block; padding:5px 0;}
@@ -343,13 +355,13 @@ body.carto{overflow-y: hidden !important;}
 display: none;
 }
 
-.ReactModalPortal div.toppad{border:4px solid blue !important; display: none !important;}
+.ReactModalPortal div.toppad{border:0px solid blue !important; display: none !important;}
 
 
 .ReactModal__Overlay{background-color:transparent !important;   background: rgba(0,0,0,0.50);
   backdrop-filter: blur(4px);}
 
-.ReactModal__Content{padding:0 !important; background:transparent !important; width:92vw; margin:30px auto ; border:none !important; box-shadow: 0px 1px 10px 10px rgba(0, 0, 0, 0.5);}
+.ReactModal__Content{padding:0 !important; background:#111 !important; width:92vw; margin:30px auto ; border:none !important; box-shadow: 0px 1px 10px 10px rgba(0, 0, 0, 0.5);}
 
 
 .ReactModal__Body--open {
@@ -544,8 +556,8 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
 .modal-btn:hover{background:#222;}
 
 
-.react-images__blanket{z-index:2 !important;}
-.react-images__positioner{z-index:3 !important;}
+.react-images__blanket{z-index:3 !important;}
+.react-images__positioner{z-index:4 !important;}
 
 .gatsby-image-wrapper-constrained{display: block !important;}
 
@@ -553,7 +565,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
 .react-images__view-image{height:100vh !important; object-fit: contain;}
 .fullscreen{height:100vh; width:100%;}
 .vert img{ object-fit: contain !important;}
-.vert {height:100%;}
+
 
 .popper{
   animation: move;
@@ -580,7 +592,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
     transform-origin: top -80%;
     transform: scale(0);
     opacity: 0;
-
+    z-index: -3;
   }
   
 
@@ -588,6 +600,7 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
     transform: scale(1.0);
     transform-origin: 50% 0%;
     opacity: 1;
+    z-index: 1;
   }
 }
 
@@ -884,6 +897,7 @@ background:#000;
 ::-webkit-scrollbar-track {
   background: #000;
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.9);
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.9);
 }
 ::-webkit-scrollbar-thumb {
 
@@ -1025,22 +1039,64 @@ border:1px solid #777;
       }
 
 
-
-
-
-    @keyframes poof {
-      0% {
-        transform: translateY(0);
-        display: none;
+      .intro:before, .poof{
+        position:absolute;
+        top:0;
+        left:0;
+        z-index: 1;
+        width: 100%;
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-position: left top;
+        background-image: linear-gradient(#111212 40%, #232325  100%);
+          
+            animation: poof 1.5s forwards;
+            animation-delay: 1.5s;
+            overflow: hidden;
         }
         
-      100% {
-        transform: translateY(1200px) scaleY(1.35) scaleX(2.5);
-        height:0;
-          filter: blur(60px);
-          opacity: 0;   	
+        @keyframes poof {
+        0% {
+          transform: translateY(0);
+          display: none;
+          }
+          
+        100% {
+          transform: translateY(1200px) scaleY(1.35) scaleX(2.5);
+          height:0;
+            filter: blur(60px);
+            opacity: 0;   	
+          }
         }
-      }
+
+
+
+
+
+        @media print {
+          body {
+             color: #000;
+             background: #fff;
+          }
+       
+       footer, .sidebarIconToggle, .back, .taggage, .infomenu, .sidebart, .print {display: none !important;}
+
+       #logo {
+        filter: brightness(0) saturate(100%) !important;
+        /* border:1px solid red !important; */
+        /* filter: invert(17%) sepia(97%) saturate(3794%) hue-rotate(305deg) brightness(99%) contrast(112%) !important; */
+        position:absolute !important; 
+        top:0px !important;
+        }
+     
+       }
+
+       /* .print{ border: 1px solid red !important} */
+
+       #logo {
+       /* filter: drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.2)); */
+          filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.9));
+       }
     
     
       @import "animate.css";

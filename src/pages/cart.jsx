@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import { Layout } from "../components/layout1"
+import { Layout } from "../components/layout"
 import { StoreContext } from "../context/store-context"
 import { LineItem } from "../components/line-item"
 import { formatPrice } from "../utils/format-price"
@@ -66,7 +66,7 @@ export default function CartPage() {
               <thead>
                 <tr>
                   <th className={imageHeader}>Image</th>
-                  <th className={productHeader}>Twilightscape</th>
+                  <th className={productHeader}>Photograph:</th>
                   <th className={collapseColumn}>Price</th>
                   <th></th>
                   <th className={[totals, collapseColumn].join(" ")}>Total</th>

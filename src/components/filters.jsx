@@ -58,7 +58,7 @@ export function Filters({
             )}
           </div>
         </summary>
-        <div className={priceFields} style={{display:'none'}}>
+        <div className={priceFields}>
           <CurrencyField
             {...currencyCode}
             aria-label="Minimum price"
@@ -77,16 +77,18 @@ export function Filters({
             }
           />
         </div>
-      </details> */}
-      {/* <hr />
+      </details>
+      <hr />
       <CheckFilter
         name="Brands"
         items={vendors}
         selectedItems={filters.vendors}
         setSelectedItems={(value) => updateFilter("vendors", value)}
-
-      /> */}
+      />
+      <hr /> */}
+      <br />
       <hr />
+      <br />
       <CheckFilter
         open={true}
         name="Tags"
