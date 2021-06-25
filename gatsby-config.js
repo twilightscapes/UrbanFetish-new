@@ -8,7 +8,7 @@ module.exports = {
     hrefLang: "en",
     siteDescription:
       "Night long exposure photography in remote abandoned locations urban exploration",
-    siteImage: "https://twilightscapes.com/default-og-image.jpg",
+    siteImage: "https://urbanfetish.com/default-og-image.jpg",
     twitter: "toddlambert",
   },
   flags: {
@@ -49,7 +49,7 @@ module.exports = {
         short_name: `urbanfetish`,
         start_url: `/`,
         background_color: `#222`,
-        theme_color: `#FA02B7`,
+        theme_color: `#000`,
         display: `standalone`,
         start_url: `/?user_mode=app`,
 
