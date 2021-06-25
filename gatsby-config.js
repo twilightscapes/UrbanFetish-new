@@ -48,8 +48,8 @@ module.exports = {
         name: `Urban Fetish`,
         short_name: `urbanfetish`,
         start_url: `/`,
-        background_color: `#222`,
-        theme_color: `#222`,
+        background_color: `#333`,
+        theme_color: `#333`,
         display: `standalone`,
         start_url: `/?user_mode=app`,
 
