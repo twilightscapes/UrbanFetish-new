@@ -1026,7 +1026,7 @@ background:#000;
   width: 1rem;
 }
 ::-webkit-scrollbar-track {
-  background: #000;
+  background: #222;
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.9);
   box-shadow: inset 0 0 6px rgba(0,0,0,0.9);
 }
