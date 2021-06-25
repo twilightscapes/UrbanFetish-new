@@ -35,20 +35,26 @@ export default function ThanksPage({}) {
         textAlign: "center",
         display:'flex',
         justifyContent:'center',
-        flexDirection:'column'
+        flexDirection:'column',
       }}
     >
       <RiCheckboxCircleLine
         style={{
-          fontSize: "128px",
+          fontSize: "20vw",
           color: "var(--primary-color)",
+          textAlign:'center',
+          border:'0px solid red',
+          width:'100%'
         }}
+        className="letter"
       />
+
+      <br />
       <h1>Got your message</h1>
-      <p>Thank you for getting in touch us. We will get back to you shortly.</p>
-      <Link to="/" className="button">
+      <p>Thank you for getting in touch with me. I will get back to you shortly.</p>
+      <Link to="/" className="moreButton">
         <RiArrowLeftSLine className="icon -left" />
-        Lets go back to Homepage
+        go back to homepage
       </Link>
     </div>
     

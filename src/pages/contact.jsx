@@ -14,7 +14,7 @@ p{margin-bottom:2rem;}
 
 
 
-.contact-form input, .contact-form textarea{border:0px solid red !important; color:#222; !important;}
+// .contact-form input, .contact-form textarea{border:0px solid red !important; color:#222; !important;}
 
 
 
@@ -48,7 +48,7 @@ export default function ContactPage() {
      
       <div className="wrapper" style={{padding:'2rem 3%'}}>
 
-      <h1 className="title" style={{fontSize:'50px'}}>Contact Me</h1>
+      {/* <h1 className="title" style={{fontSize:'50px'}}>Contact Me</h1> */}
 
         <form
           className="contact-form"
@@ -82,11 +82,10 @@ export default function ContactPage() {
               Message<textarea name="message" required></textarea>
             </label>
           </p>
-          <p className="text-align-right">
+          <div style={{display:'flex', justifyContent:'center'}}>
             <button
-              className="button"
+              className="moreButton"
               style={{color:'#fff',
-              background:'#444',
             }}
               sx={{
                 // variant: "variants.button",
@@ -99,7 +98,7 @@ export default function ContactPage() {
                 <RiSendPlane2Line />
               </span>
             </button>
-          </p>
+          </div>
         </form>
       </div>
     </Layout>

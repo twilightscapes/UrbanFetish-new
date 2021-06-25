@@ -43,7 +43,7 @@ export default function CustomerPage({}) {
     <br />
      <p>If you should ever have any questions or concerns, please feel free to drop me a line anytime.</p>
 
-     <p style={{textAlign:'center'}}><Link className="button" to="/contact/" state={{modal: true}} >Contact Todd Now</Link></p>
+     <p style={{textAlign:'center'}}><Link className="moreButton" to="/contact/" state={{modal: true}} >Contact Todd Now</Link></p>
 
 
 

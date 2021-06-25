@@ -178,8 +178,7 @@ export default function Product({ data: { product, suggestions } }) {
                     >
                       
 
-                      {/* <div className="vert" style={{height:'', background:'url( {spinner} )', position:'relative' }}> */}
-                      <div className="vert" style={{position:'relative' }}>
+                      <div className="vert" style={{ position:'relative' }}>
                         
                         <InnerImageZoom src={getSrc(firstImage.gatsbyImageData)} objectFit="contain" loading={index === 0 ? "eager" : "lazy"} />
 
@@ -222,7 +221,7 @@ export default function Product({ data: { product, suggestions } }) {
 
 <div className="flexcheek" style={{width:'70%'}}>
             <div className={breadcrumb}>
-              <Link to={product.productTypeSlug}>{product.productType}</Link>
+              {/* <Link to={product.productTypeSlug}>{product.productType}</Link> */}
               {/* <ChevronIcon size={12} /> */}
             </div>
             <h1 className={header}>{title}</h1>
@@ -314,7 +313,7 @@ export default function Product({ data: { product, suggestions } }) {
            Edited and production output to Tiff file format<br /> <br />
            Typical file size 30-50MB<br /> <br />
            Average dimensions range from 4988×3325 to 5481x3653 or greater<br /> <br />
-           All Urban Fetish images are shot using the latest state-of-the-art equipment and lenses.
+           All Twilightscapes are shot using the latest state-of-the-art equipment and lenses.
            <br /><br />Canon 5D series, Sony A7R series and Sony A7S series.
            </p>
            
@@ -354,7 +353,7 @@ export default function Product({ data: { product, suggestions } }) {
            <strong>Legal</strong><br /><br />
 
            <p>
-           Urban Fetish offers two types of license models: royalty-free ("RF") and rights-managed ("RM").</p>
+           Twilightscapes offers two types of license models: royalty-free ("RF") and rights-managed ("RM").</p>
 
            <p>
             Royalty-free means that the license fee is paid once and there is no need to pay additional royalties if the content is re-used. <br />Royalty-free content is licensed for worldwide, unlimited and perpetual use.</p>
@@ -437,7 +436,7 @@ Rights-managed content is licensed for specific types of private use, and limits
   <h3 style={{fontSize:'130%', fontWeight:'bold', textAlign:'center'}}>About the photographer</h3>
 
   <Link key="All" to="/about/" >
-  <div className="button" style={{position:'absolute', display:'flex', zIndex:"1", justifyContent:'center', textAlign:'center', top:'30%', width:'90%',background:'#111',
+  <div className="" style={{position:'absolute', display:'flex', zIndex:"1", justifyContent:'center', textAlign:'center', top:'30%', width:'90%',background:'#111',
           color:'#fff',
           padding:'12px 15px',
           margin:'0 5%',
@@ -456,15 +455,16 @@ Rights-managed content is licensed for specific types of private use, and limits
 <br />
 <h3 style={{fontSize:'130%', fontWeight:'bold', textAlign:'center'}}>Other projects by Todd</h3>
 
-<a href="https://twilightscapes.com" target="_blank" rel="noopener noreferrer" style={{textDecoration:'none', color:'inherit', lineHeight:'1.7rem'}}>
+<a href="https://urbanfetish.com" target="_blank" rel="noopener noreferrer" style={{textDecoration:'none', color:'inherit', lineHeight:'1.7rem'}}>
  
 
-<Image className="" alt="Todd Lambert Night photos" filename="twilightscapes-button.jpg" />
+
+ <Image className="slider" alt="Urban Fetish photos" filename="urban-fetish-button.jpg" />
  <br />
  
- Experience a new style of landscape photography all through the eyes of Todd Lambert. Explore the unusual and see the Western States like you&apos;ve never seen them before.
+ Take a walk on the wild side and follow along as Todd Lambert goes in search of the creepiest, freakiest, spookiest abandoned and desolate locations he can find. 
  
- <h5 style={{textAlign:'center',}}>Visit Twilightscapes.com</h5></a>
+ <h5 style={{textAlign:'center',}}>Visit UrbanFetish.com</h5></a>
 
 
             </div>

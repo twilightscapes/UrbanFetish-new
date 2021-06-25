@@ -8,7 +8,7 @@ import Image from '../components/Image'
 import { ProductListing } from "../components/product-listing"
 import Social from "../components/social"
 import Newsignup from "../components/newssign"
-import TouchUp from '../components/TouchUp'
+// import TouchUp from '../components/TouchUp'
 import { RiArrowDownLine, RiArrowRightSLine, RiStarLine, RiSendPlane2Line } from "react-icons/ri"
 
 import {
@@ -24,6 +24,9 @@ import styled from "styled-components"
 const CustomBox = styled.div`
 
 
+
+
+
 .intro:before{
 	content: "A Fetish For Decay";
 position:absolute;
@@ -34,17 +37,24 @@ font-size:5vw; color:#f8f8fc; text-shadow: 12px 7px 15px 12px black;
 }
 
 
+
+
+@media (min-width: 58em) {
+
+}
+
+
 `
 
 
 export const query = graphql`
-  query {
-    shopifyCollection(handle: { eq: "urbanfetish" }) {
-      products {
-        ...ProductCard
-      }
+query {
+  shopifyCollection(handle: { eq: "urbanfetish" }) {
+    products {
+      ...ProductCard
     }
   }
+}
 `
 
 export default function IndexPage({ data }) {
@@ -57,7 +67,7 @@ export default function IndexPage({ data }) {
     <Seo title={`Welcome`} />
     {/* <Seo image={'/default-og-image.jpg'} /> */}
 
-    <TouchUp />
+    {/* <TouchUp /> */}
     <div className="home-banner flexbutt" style={{position:'relative', height:'auto', overflow:'hidden'}}>
 
 
@@ -68,17 +78,16 @@ export default function IndexPage({ data }) {
   <h1 className="title1">Urban Exploration</h1>
 
   <p className="tagline1">
-   Urban exploration photography by Todd Lambert
+  Urban exploration photography by Todd Lambert
   </p>
 
 
-      <p>Finding obscure locations and unusual subject matter, Todd has explored these fabulous, forgotten and sometimes forbidden spaces in 16 states.</p>
-      <p>As a location scout and avid urban explorer, Todd learned to photograph what he sees and to bring the unique subject matter he finds to light.</p>
+      <p>I love the rush that you get when you're standing where someone hadn't stepped in years. Putting together the puzzle of other's lives from the remnants that have survived time. I feel sort of like an alternative-archeologist sometimes.</p>
 
 <div className="" style={{display:'flex'}}>
 
       <blockquote className="frontquote" style={{width:'60%'}}>
-<p>I love the rush that you get when you're standing where someone hadn't stepped in years. Putting together the puzzle of other's lives from the remnants that have survived time. I feel sort of like an alternative-archeologist sometimes.   </p>
+<p>The night is misunderstood and often feared, but the night can be a world of wonder and an orchestra of colors. Finding yourself at 3am in a graveyard filming flowers; some may see that as weird, but for me, it's pure tranquility. </p>
 <div style={{textAlign:'right', marginRight:'20%', marginTop:'10px'}}> – Todd Lambert
 </div></blockquote>
 
@@ -110,14 +119,14 @@ export default function IndexPage({ data }) {
 
 <div className="flexcheek" style={{position:'relative', overflow:'hidden'}}>
 
-<div className="kenburns-right"  style={{zIndex:'-1', width:'', height:''}}><Image alt="Todd Lambert hanging with friends" filename="gallery6-abandoned27.jpg" className="featured-image kenburns-right" /></div>
+<div className="kenburns-right"  style={{zIndex:'-1', width:'', height:''}}><Image alt="Todd Lambert" filename="gallery6-abandoned27.jpg" className="featured-image kenburns-right" /></div>
 
 
 <div className="abcontent" style={{position:'absolute', height:'', width:'100%', top:'50px', right:'0',}}>
 
 <ScrollAnimation animateIn="bounceInDown" delay={1350} offset={0}  initiallyVisible={false} animateOnce={true} animatePreScroll={true} style={{position:'relative', top:'0px', paddingRight:'10%', border:'0px solid yellow'}}>
 <h2
-  className="boom normal txtshadow-header hit-the-floor"
+  className="letter normal txtshadow-header hit-the-floor"
   style={{
     color: '#fff',
     fontSize: '60px',
@@ -129,17 +138,16 @@ export default function IndexPage({ data }) {
     float: 'none',
     margin:'0',
     padding:'0',
-    textShadow:'3px 5px 5px rgba(0, 0, 0, 0.9)',
   }}
 >
-  Take a walk
+Take a walk
 </h2>
 </ScrollAnimation>
 
 
 <ScrollAnimation animateIn="bounceInRight" delay={1400} initiallyVisible={false} animateOnce={true} animatePreScroll={true} style={{position:'relative', top:'', paddingRight:'10%', border:'0px solid red'}}>
 <h2
-  className="boom narrow txtshadow mobile-txt"
+  className="letter narrow txtshadow mobile-txt"
   style={{
    fontSize:'40px',
    color: 'white',
@@ -147,17 +155,16 @@ export default function IndexPage({ data }) {
     textAlign: 'right', 
     margin:'0',
     padding:'0',
-    textShadow:'2px 3px 4px rgba(0, 0, 0, 0.9)',
   }}
 >
-  on the
+on the
 </h2>
 </ScrollAnimation>
 
 
 <ScrollAnimation animateIn="bounceInUp" delay={1450} initiallyVisible={false} animateOnce={true} animatePreScroll={true} style={{position:'relative', top:'', paddingRight:'10%', border:'0px solid blue'}}>
 <h2
-  className="boom narrow txtshadow mobile-txt"
+  className="letter narrow txtshadow mobile-txt"
   style={{
    fontSize:'80px',
    color: 'white',
@@ -167,10 +174,9 @@ export default function IndexPage({ data }) {
     textTransform: 'uppercase', 
     margin:'0',
     padding:'0',
-    textShadow:'3px 5px 10px rgba(0, 0, 0, 0.9)',
   }}
 >
-  WILD SIDE
+WILD SIDE
 </h2>
 </ScrollAnimation>
 
@@ -211,11 +217,12 @@ right:'', border:'0px solid yellow', justifyContent:'center', width:'', textAlig
 
 <br /><br />
 <h2 style={{display:'flex', fontSize:'30px', margin:'0 3% 2rem 3%'}}>
-      Latest For Sale<span className=""> <span className="icon -right" style={{padding:'10px 0 0 1rem'}}><RiArrowDownLine /></span>
+Latest For Sale<span className=""> <span className="icon -right" style={{padding:'10px 0 0 1rem'}}><RiArrowDownLine /></span>
       </span>
     </h2>
-      <ProductListing products={data.shopifyCollection.products} />
-
+    <div className="frontprod">
+      <ProductListing products={data.shopifyCollection.products} className="frontprod" />
+</div>
       <Link
               className="moreButton"
               sx={{

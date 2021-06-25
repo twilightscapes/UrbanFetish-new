@@ -1,14 +1,20 @@
 import * as React from "react"
-// import { graphql } from "gatsby"
+import { graphql } from "gatsby"
 import { Layout } from "../components/layout"
-// import { ProductListing } from "../components/product-listing"
+import { ProductListing } from "../components/product-listing"
+import { Link } from "gatsby"
 import { Seo } from "../components/seo"
 import { Helmet } from "react-helmet"
 import { RiArrowDownLine, RiArrowRightSLine, RiStarLine, RiSendPlane2Line } from "react-icons/ri"
 import { IoLogoVercel } from "react-icons/io5"
 import { BsCircleFill } from "react-icons/bs"
 import { FaSquareFull } from "react-icons/fa"
-  
+
+
+import { MoreButton } from "../components/more-button"
+import { title } from "../pages/index.module.css"
+
+
 
 import {
   container,
@@ -25,6 +31,9 @@ import { GiPlainArrow } from 'react-icons/gi'
 import styled from 'styled-components'
 
 const CustomBox = styled.div`
+
+
+a:after{display:none !important;}
 
 
 .intro:before{
@@ -97,6 +106,23 @@ height: 0;
 	}
 
 
+       
+
+`
+
+
+
+
+
+
+export const query = graphql`
+  query {
+    shopifyCollection(handle: { eq: "limited-edition-nft-kits" }) {
+      products {
+        ...ProductCard
+      }
+    }
+  }
 
 
 
@@ -105,58 +131,84 @@ height: 0;
 
 `
 
+       // export default function nftPage({ data: { products } }) {
+              export default function nftPage({ data }) {
 
-
-// export const query = graphql`
-//   query {
-//     shopifyCollection(handle: { eq: "limited-edition-nft-kits" }) {
-//       products {
-//         ...ProductCard
-//       }
-//     }
-//   }
-// `
-// export default function nftPage({ data }) {
-  export default function nftPage({}) {
   return (
 <>
 
 <Helmet>
 <meta name="twitter:image:src" content="https://twilightscapes.com/follow-me-into-the-night-promo.jpg" />
-
-
 </Helmet>
 
 <CustomBox>
-    
-    <Layout className="thanks-page">
+
+    <Layout className="nft-page" style={{position:'relative'}}>
 
     
     
 <Seo title={`NFT Collectible Photography Nightscape Photos`} />
 
+
+{/* <div className="video-background">
+    <div className="video-foreground">
+      <iframe src="https://www.youtube.com/embed/iH5sjz0nx9o?controls=0&amp;showinfo=0&amp;rel=0&amp;autoplay=1&amp;loop=1" frameBorder="0" allowFullscreen></iframe>
+
+
+    </div>
+
+
+    <div id="vidtop-content">
+<div className="vid-info">
+	  <strong>Meet Todd</strong>
+	  <p>The International Space Station orbits the Earth every 92 minutes, with its crew seeing a sunrise 15 times a day. It exists as a scientific, educational, and engineering platform in low orbit, 330 to 435 kilometres above the Earth.</p>
+     <p>Original timelapse by Riccardo Rossi (ISAA), used under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. Raw photos courtesy of</p>
+  </div>
+</div>
+
+
+  </div> */}
+
+ 
+
+  
+
+
+
+    <section className="nft" style={{paddingTop:'0', overflow:'', margin:'1vh', background:'#111'}}>
     
-    <section className="" style={{paddingTop:'0', overflow:'', marginTop:'1vh'}}>
+
     
+
+
    
-    <div className="" style={{padding:'1vh 15% 0 15%', textAlign:'left'}}>
+    <div className="" style={{background:'#111', padding:'1vh 12% 0 12%', textAlign:'left'}}>
 
-           <h1 style={{textAlign:'center', fontSize:'3vw'}}>NFT Collectible Photography</h1>
+           <h1 style={{textAlign:'center', fontSize:'clamp(1.3rem, 1.1vw + 1.5rem, 3rem)'}}>NFT Collectible Photography</h1>
+          
 
-
-<p style={{textAlign:'center',}}>
-The Non Fungible Token or NFT, stores proof of identity and ownership of art on the blockchain where it's impossible to be forged, stolen, copied, or recreated.
+<p style={{textAlign:'center', margin:'0 12%'}}>
+The Non Fungible Token or NFT, stores proof of identity and ownership of art on the blockchain where it's impossible to be forged, stolen or copied.
 </p>
 
-<p style={{textAlign:'center', fontSize:'100%', fontWeight:'bold'}}> Offering a Limited Edition of rare NFTs.</p>
+<p style={{textAlign:'center', fontSize:'100%', fontWeight:'bold', marginTop:'10px'}}>Twilightscapes offers a Limited Edition of rare NFTs.</p>
 
-<p style={{textAlign:'center', fontSize:'3vw'}}>Follow Me Into The Night </p>
-<p style={{textAlign:'center', fontSize:'140%', marginTop:'-20px'}}>The Genesis Series</p>
+<p style={{textAlign:'center', fontSize:'clamp(1.3rem, 1.1vw + 1.5rem, 3rem)', color:'#FA02B7'}}>Follow Me Into The Night </p>
 
-<p style={{textAlign:'center', fontSize:'100%'}}>presented exclusively on Foundation
+<p style={{textAlign:'center', fontSize:'140%', marginTop:''}}>An introduction to the work of Todd Lambert</p>
+
+<p style={{textAlign:'center', fontSize:'100%',}}>Genesis Series presented <br />  exclusively on Foundation
 <span style={{fontSize:'40px', display:'flex', justifyContent:'center', gap:'3px', marginTop:'10px'}}><IoLogoVercel /><BsCircleFill style={{marginLeft:'-6px', fontSize:'36px'}} /><FaSquareFull style={{marginLeft:'2px', fontSize:'36px'}} /></span>
 
 
+</p>
+
+
+<br /><br />
+<p style={{textAlign:'center', fontSize:'100%', fontWeight:'bold', maxWidth:'700px', margin:'0 auto'}}>
+       winning bids will receive a special NFT package including: behind the scene information, a certificate of authenticity and a limited edition signed print.<br />
+       <br />
+       Original source RAW file included.<br />The image will also be taken out of future commissions and retired.
 </p>
 
 
@@ -165,10 +217,16 @@ The Non Fungible Token or NFT, stores proof of identity and ownership of art on 
        
        
        
- <ScrollAnimation animateIn="bounceInUp"  animateOnce={true} delay={100} style={{position:'relative', height:'100%', borderTop:'10px dotted #000', marginTop:'4rem', paddingTop:'1rem'}}>
+ <ScrollAnimation animateIn="bounceInUp"  animateOnce={true} delay={100} style={{position:'relative', height:'100%', border:'10px dotted #000', marginTop:'4rem', paddingTop:'1rem', background:'#111'}}>
  <a href="https://foundation.app/@twilightscapes/stellar-sentries-51674" target="_blank" rel="noopener noreferrer nofollow">
 
 <div className="home-banner flexbutt" style={{position:'relative', height:'100%', overflow:'', margin:'1rem 3%'}}>
+
+
+<div className="flexcheek" style={{position:'relative', overflow:'', width:'75vw'}}>
+
+<div className="kenburns-right1"  style={{zIndex:'-1', width:'', height:'100%'}}><Image alt="Todd Lambert hanging with friends" filename="night165.jpg" className="featured-image kenburns-right" /></div>
+</div>
 
 
 <div className="flexcheek" style={{padding:'1vh 3% 0 3%',}}>
@@ -184,7 +242,7 @@ The Non Fungible Token or NFT, stores proof of identity and ownership of art on 
 
 
       <a
-              className="moreButton"
+              className="actionJackson"
               sx={{
                 cursor:'pointer',
                 width:'',
@@ -192,10 +250,26 @@ The Non Fungible Token or NFT, stores proof of identity and ownership of art on 
               }}
               href="https://foundation.app/@twilightscapes/stellar-sentries-51674"
             >
-              Buy This! {" "}
+              Place Bid Now {" "}
               <span className="icon -right" style={{paddingLeft:'1rem'}}>
                 <RiSendPlane2Line />
               </span>
+            </a>
+
+            <a
+              className="moreButton"
+               style={{
+                cursor:'pointer',
+                textAlign:'center',
+                margin:'2rem auto',
+alignItems:'center',
+display: 'flex',
+justifyContent: 'center',
+
+              }}
+              href="https://etherscan.io/token/0x3B3ee1931Dc30C1957379FAc9aba94D1C48a5405?a=51674" target="_blank" rel="noopener noreferrer"
+            >
+              View token on Etherscan {" "}
             </a>
 
 
@@ -203,23 +277,23 @@ The Non Fungible Token or NFT, stores proof of identity and ownership of art on 
 
 
 
-<div className="flexcheek" style={{position:'relative', overflow:'', width:'75vw'}}>
-
-<div className="kenburns-right1"  style={{zIndex:'-1', width:'', height:'100%'}}><Image alt="Todd Lambert hanging with friends" filename="night165.jpg" className="featured-image kenburns-right" /></div>
-
-
-</div>
-
 </div>
 </a>
 </ScrollAnimation>
 
 
 
-<ScrollAnimation animateIn="bounceInUp"  animateOnce={true} delay={100} style={{position:'relative', height:'100%', borderTop:'10px dotted #000', marginTop:'2rem', paddingTop:'1rem'}}>
+<ScrollAnimation animateIn="bounceInUp"  animateOnce={true} delay={100} style={{position:'relative', height:'100%', border:'10px dotted #000', marginTop:'2rem', paddingTop:'1rem', background:'#111'}}>
 
 <a href="https://foundation.app/@twilightscapes/alien-egg-farm-51678" target="_blank" rel="noopener noreferrer nofollow">
 <div className="home-banner flexbutt" style={{position:'relative', height:'100%', overflow:'', margin:'1rem 3%'}}>
+
+
+<div className="flexcheek" style={{position:'relative', overflow:'', width:'75vw'}}>
+
+<div className="kenburns-right1"  style={{zIndex:'-1', width:'', height:'100%'}}><Image alt="Todd Lambert hanging with friends" filename="night295.jpg" className="featured-image kenburns-right" /></div>
+
+</div>
 
 
 <div className="flexcheek" style={{padding:'1vh 3% 0 3%',}}>
@@ -238,7 +312,7 @@ The Non Fungible Token or NFT, stores proof of identity and ownership of art on 
 
 
       <a
-              className="moreButton"
+              className="actionJackson"
               sx={{
                 cursor:'pointer',
                 width:'',
@@ -246,21 +320,26 @@ The Non Fungible Token or NFT, stores proof of identity and ownership of art on 
               }}
               href="https://foundation.app/@twilightscapes/alien-egg-farm-51678"
             >
-              Buy This! {" "}
+              Place Bid Now {" "}
               <span className="icon -right" style={{paddingLeft:'1rem'}}>
                 <RiSendPlane2Line />
               </span>
             </a>
+            <a
+              className="moreButton"
+               style={{
+                cursor:'pointer',
+                textAlign:'center',
+                margin:'2rem auto',
+alignItems:'center',
+display: 'flex',
+justifyContent: 'center',
 
-</div>
-
-
-
-<div className="flexcheek" style={{position:'relative', overflow:'', width:'75vw'}}>
-
-<div className="kenburns-right1"  style={{zIndex:'-1', width:'', height:'100%'}}><Image alt="Todd Lambert hanging with friends" filename="night295.jpg" className="featured-image kenburns-right" /></div>
-
-
+              }}
+              href="https://etherscan.io/token/0x3B3ee1931Dc30C1957379FAc9aba94D1C48a5405?a=51678" target="_blank" rel="noopener noreferrer"
+            >
+              View token on Etherscan {" "}
+            </a>
 </div>
 
 </div>
@@ -269,10 +348,16 @@ The Non Fungible Token or NFT, stores proof of identity and ownership of art on 
 
 
 
-<ScrollAnimation animateIn="bounceInUp"  animateOnce={true} delay={100} style={{position:'relative', height:'100%', borderTop:'10px dotted #000', marginTop:'2rem', paddingTop:'1rem'}}>
+<ScrollAnimation animateIn="bounceInUp"  animateOnce={true} delay={100} style={{position:'relative', height:'100%', border:'10px dotted #000', marginTop:'2rem', paddingTop:'1rem', background:'#111'}}>
 
 <a href="https://foundation.app/@twilightscapes/boatswain-s-blunder-51680" target="_blank" rel="noopener noreferrer nofollow">
 <div className="home-banner flexbutt" style={{position:'relative', height:'100%', overflow:'', margin:'1rem 3%'}}>
+
+<div className="flexcheek" style={{position:'relative', overflow:'', width:'75vw'}}>
+
+<div className="kenburns-right1"  style={{zIndex:'-1', width:'', height:'100%'}}><Image alt="Todd Lambert hanging with friends" filename="night282.jpg" className="featured-image kenburns-right" /></div>
+
+</div>
 
 
 <div className="flexcheek" style={{padding:'1vh 3% 0 3%', maxWidth:''}}>
@@ -292,42 +377,193 @@ The Non Fungible Token or NFT, stores proof of identity and ownership of art on 
 <p>-- by Todd Lambert</p>
 
 <a
-              className="moreButton"
+              className="actionJackson"
               sx={{
                 cursor:'pointer',
                 width:'',
                 backgroundColor:'#000 !important'
               }}
-              href="https://foundation.app/@twilightscapes/boatswain-s-blunder-51680"
+              href="https://foundation.app/@twilightscapes/boatswain-s-blunder-51680" target="_blank" rel="noopener noreferrer"
             >
-              Buy This! {" "}
+              Place Bid Now {" "}
               <span className="icon -right" style={{paddingLeft:'1rem'}}>
                 <RiSendPlane2Line />
               </span>
             </a>
 
 
+
+            <a
+              className="moreButton"
+               style={{
+                cursor:'pointer',
+                textAlign:'center',
+                margin:'2rem auto',
+alignItems:'center',
+display: 'flex',
+justifyContent: 'center',
+
+              }}
+              href=" https://etherscan.io/token/0x3B3ee1931Dc30C1957379FAc9aba94D1C48a5405?a=51680" target="_blank" rel="noopener noreferrer"
+            >
+              View token on Etherscan {" "}
+            </a>
+           
+
+
 </div>
 
-<div className="flexcheek" style={{position:'relative', overflow:'', width:'75vw'}}>
-
-<div className="kenburns-right1"  style={{zIndex:'-1', width:'', height:'100%'}}><Image alt="Todd Lambert hanging with friends" filename="night282.jpg" className="featured-image kenburns-right" /></div>
 
 
-</div>
 </div>
 </a>
 </ScrollAnimation>
        
        
-       
-       
-       
-       
+
+    </section>
+ 
+
+ <br /> <br />
+    <h2 className="title" style={{fontSize:'50px', textAlign:'center'}}>Dropping Soon</h2>
+<p style={{textAlign:'center'}}>What's coming up next</p>
+<br /><br />
+
+<div className="dropromo" style={{width:'100vw', height:'30vh', overflow:'hidden', position:'relative', }}>
        
 
-      
-    </section>
+<div style={{display:'flex', justifyContent:'center', position:'absolute', top:'0', textAlign:'center', width:'90%', margin:'0 auto'}}>
+
+<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={100} style={{zIndex:'1' }}>
+<span className="letter">D</span>
+</ScrollAnimation>
+<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={200} style={{zIndex:'1' }}>
+<span className="letter">e</span>
+</ScrollAnimation>
+<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={300} style={{zIndex:'1' }}>
+<span className="letter">n</span>
+</ScrollAnimation>
+<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={400} style={{zIndex:'1' }}>
+<span className="letter">d</span>
+</ScrollAnimation>
+<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={500} style={{zIndex:'1' }}>
+<span className="letter">r</span>
+</ScrollAnimation>
+<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={600} style={{zIndex:'1' }}>
+<span className="letter">o</span>
+</ScrollAnimation>
+<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={700} style={{zIndex:'1' }}>
+<span className="letter">i</span>
+</ScrollAnimation>
+<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={800} style={{zIndex:'1' }}>
+<span className="letter">d</span>
+</ScrollAnimation>
+
+<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={1400} style={{zIndex:'1', marginLeft:'2rem' }}>
+<span className="letter">D</span>
+</ScrollAnimation>
+<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={1500} style={{zIndex:'1' }}>
+<span className="letter">r</span>
+</ScrollAnimation>
+<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={1600} style={{zIndex:'1' }}>
+<span className="letter">e</span>
+</ScrollAnimation>
+<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={1700} style={{zIndex:'1' }}>
+<span className="letter">a</span>
+</ScrollAnimation>
+<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={1800} style={{zIndex:'1' }}>
+<span className="letter">m</span>
+</ScrollAnimation>
+<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={1900} style={{zIndex:'1' }}>
+<span className="letter">s</span>
+</ScrollAnimation>
+</div>
+
+<ScrollAnimation animateIn="fadeIn"  animateOnce={true} delay={2500} style={{zIndex:'1', position:'absolute', bottom:'10px', width:'100%', margin:'0 auto' }}>
+<div style={{textAlign:'center', fontSize:'140%',}}>coming soon</div>
+</ScrollAnimation>
+
+
+<div className=" kenburns-bottom-right" style={{zIndex:'',}}><Image className="slider" alt="Coming Soon" filename="night221.jpg" style={{backgroundSize:'cover', zIndex:'', }} /></div>
+
+</div>
+
+
+<br />
+<br />
+
+<div className="dropromo" style={{width:'100vw', height:'30vh', overflow:'hidden', position:'relative', }}>
+       
+
+<div style={{display:'flex', justifyContent:'center', position:'absolute', top:'0', textAlign:'center', width:'90%', margin:'0 auto'}}>
+
+<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={1000} style={{zIndex:'1' }}>
+<span className="letter">G</span>
+</ScrollAnimation>
+<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={1200} style={{zIndex:'1' }}>
+<span className="letter">a</span>
+</ScrollAnimation>
+<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={1300} style={{zIndex:'1' }}>
+<span className="letter">s</span>
+</ScrollAnimation>
+
+<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={1400} style={{zIndex:'1', marginLeft:'2rem' }}>
+<span className="letter">S</span>
+</ScrollAnimation>
+<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={1500} style={{zIndex:'1' }}>
+<span className="letter">t</span>
+</ScrollAnimation>
+<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={1600} style={{zIndex:'1' }}>
+<span className="letter">a</span>
+</ScrollAnimation>
+<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={1700} style={{zIndex:'1' }}>
+<span className="letter">t</span>
+</ScrollAnimation>
+<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={1800} style={{zIndex:'1' }}>
+<span className="letter">i</span>
+</ScrollAnimation>
+<ScrollAnimation animateIn="jackInTheBox"  animateOncTe={true} delay={1900} style={{zIndex:'1' }}>
+<span className="letter">o</span>
+</ScrollAnimation>
+<ScrollAnimation animateIn="jackInTheBox"  animateOncTe={true} delay={2000} style={{zIndex:'1' }}>
+<span className="letter">n</span>
+</ScrollAnimation>
+<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={2100} style={{zIndex:'1' }}>
+<span className="letter">s</span>
+</ScrollAnimation>
+
+</div>
+
+<ScrollAnimation animateIn="fadeIn"  animateOnce={true} delay={2500} style={{zIndex:'1', position:'absolute', bottom:'10px', width:'100%', margin:'0 auto' }}>
+<div style={{textAlign:'center', fontSize:'140%',}}>coming soon</div>
+</ScrollAnimation>
+
+
+
+
+<div className=" kenburns-bottom-left" style={{zIndex:'',}}><Image className="nftimage" alt="Coming Soon" filename="Texaco.jpeg" style={{backgroundSize:'cover', zIndex:'', }} /></div>
+
+</div>
+
+
+
+
+<br />
+<br />
+
+
+<br />
+
+<div className="nft"><ProductListing products={data.shopifyCollection.products} />
+</div>
+  
+
+<br />
+<hr />
+<br />
+
+<h3 style={{textAlign:'center', fontSize:'160%', fontWeight:'bold', maxWidth:'700px', margin:'3rem auto'}}>Don't see the twilightscape you're looking for?</h3>
+<Link state={{modal: true}} to="/contact/" style={{textAlign:'center', fontSize:'120%', fontWeight:'bold', maxWidth:'700px', margin:'0 auto', textDecoration: 'underline',}} className="moreButton">Request it!</Link>
     </Layout>
      </CustomBox>
      </>
