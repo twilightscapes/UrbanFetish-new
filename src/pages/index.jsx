@@ -10,6 +10,7 @@ import Social from "../components/social"
 import Newsignup from "../components/newssign"
 // import TouchUp from '../components/TouchUp'
 import { RiArrowDownLine, RiArrowRightSLine, RiStarLine, RiSendPlane2Line } from "react-icons/ri"
+import { Helmet } from "react-helmet"
 
 import {
   container,
@@ -59,6 +60,14 @@ query {
 
 export default function IndexPage({ data }) {
   return (
+<>
+    <Helmet>
+  
+    <body className="homepage" />
+
+    </Helmet>
+
+
     <CustomBox>
     <Layout>
 
@@ -68,7 +77,7 @@ export default function IndexPage({ data }) {
     {/* <Seo image={'/default-og-image.jpg'} /> */}
 
     {/* <TouchUp /> */}
-    <div className="home-banner flexbutt" style={{position:'relative', height:'auto', overflow:'hidden'}}>
+    <div className="home-banner flexbutt intro" style={{position:'relative', height:'auto', overflow:'hidden'}}>
 
 
 
@@ -238,6 +247,6 @@ Latest For Sale<span className=""> <span className="icon -right" style={{padding
               </span>
             </Link>
    </Layout></CustomBox>
-    
+    </>
   )
 }

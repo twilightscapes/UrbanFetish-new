@@ -3,6 +3,7 @@ import { Layout } from "../components/layout"
 import Image from '../components/Image'
 import { RiSendPlane2Line } from "react-icons/ri"
 import { Seo } from "../components/seo"
+import GoBack from "../components/goBack"
 
 
 
@@ -32,17 +33,18 @@ export default function LegalPage() {
  
 <section className="outer section section--gradient">
       <div className="container" style={{padding: '2rem 10%'}}>
+            <GoBack />
       <h1 className="title" style={{fontSize:'50px'}}>Content License Agreement</h1>
       
       <div class="entry-content">
 	
-      <h1>URBAN FETISH CONTENT LICENSE AGREEMENT</h1>
+      <h1>TWILIGHTSCAPES CONTENT LICENSE AGREEMENT</h1>
 
 <strong>LAST UPDATED: April 2021</strong>
 <br /><br />
 <p>This is a license agreement between you and Todd Lambert that explains how you can use photos, illustrations, vectors, and video clips (individually and collectively, "content") that you license from Todd Lambert. By downloading content from Twilightcapes, you accept the terms of this agreement.</p>
 
-<p>Urban Fetish offers two types of license models: royalty-free ("RF") and rights-managed ("RM"). Royalty-free means that the license fee is paid once and there is no need to pay additional royalties if the content is re-used. Royalty-free content is licensed for worldwide, unlimited and perpetual use.</p>
+<p>Twilightscapes offers two types of license models: royalty-free ("RF") and rights-managed ("RM"). Royalty-free means that the license fee is paid once and there is no need to pay additional royalties if the content is re-used. Royalty-free content is licensed for worldwide, unlimited and perpetual use.</p>
 
 <p>Rights-managed content is licensed for specific types of private use, and limits the use of the content to private use or display only.</p>
 
@@ -57,9 +59,9 @@ Royalty-Free and Rights-Managed
 <br />
 <p>Perpetual, meaning there is no expiration or end date on your rights to use the content. Worldwide, meaning content can be used in any geographic territory. Unlimited, meaning content can be used an unlimited number of times. Any and all media, meaning content can be used in print, in digital or in any other medium or format. Non- Exclusive, meaning that you do not have exclusive rights to use the content. Todd Lambert can license the same content to other customers. If you would like exclusive rights to use royalty-free content, please contact Todd Lambert to discuss a buy-out.</p>
 
-<p>Limited to the specific use, medium, period of time, print run, placement, size of content, and territory selected, and any other restrictions that accompany the content on the Urban Fetish (or any other method of content delivery) or in an order confirmation or invoice.</p>
+<p>Limited to the specific use, medium, period of time, print run, placement, size of content, and territory selected, and any other restrictions that accompany the content on the Twilightscapes (or any other method of content delivery) or in an order confirmation or invoice.</p>
 
-<p> Non-Exclusive, meaning that, unless otherwise indicated on the website, your invoice, sales order or separate agreement, you do not have exclusive rights to use the content. Getty Images can license the same content to other customers.</p>
+<p> Non-Exclusive, meaning that, unless otherwise indicated on the website, your invoice, sales order or separate agreement, you do not have exclusive rights to use the content. Todd Lambert can license the same content to other customers.</p>
 
 <p>For purposes of this agreement, "use" means to copy, reproduce, modify, edit, synchronize, perform, display, broadcast, publish, or otherwise make use of. Please make sure you read the Restricted Uses section below for exceptions.</p>
 
@@ -118,6 +120,7 @@ Entire Agreement.
 			
 	</div>
       
+      <GoBack />
           </div>
 
 

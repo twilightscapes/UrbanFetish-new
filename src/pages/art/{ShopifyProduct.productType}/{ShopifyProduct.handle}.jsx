@@ -13,7 +13,7 @@ import { Seo } from "../../../components/seo"
 import { CgChevronRight as ChevronIcon } from "react-icons/cg"
 import { MdBrandingWatermark, MdCropFree } from "react-icons/md"
 import { RiSecurePaymentLine, RiSendPlane2Line } from "react-icons/ri"
-
+import { BiLeftArrow } from "react-icons/bi"
 import GoBack from "../../../components/goBack"
 
 // import { Link } from 'gatsby-plugin-modal-routing'
@@ -56,17 +56,12 @@ import styled from 'styled-components'
 const CustomBox = styled.div`
 
 
-.intro:before{
-	content: "Damn";
-position:absolute;
-display: flex;
-align-items: center;
-justify-content: center;
-font-size:380%; color:#f8f8fc; text-shadow: 12px 7px 15px 12px black;
-}
+.vert{minHeight:'600px'}
 
 @media (max-width: 48rem) {
 .flexcheek{width:100% !important;}
+.vert{minHeight:'inherit'}
+
  }
 
 `
@@ -169,7 +164,7 @@ export default function Product({ data: { product, suggestions } }) {
                 aria-label="gallery"
                 aria-describedby="instructions"
               >
-                <ul className={productImageList}>
+                <ul className={productImageList} style={{height:'100%'}}>
                   {images.map((image, index) => (
                     <li
                       key={`product-image-${image.id}`}
@@ -178,7 +173,7 @@ export default function Product({ data: { product, suggestions } }) {
                     >
                       
 
-                      <div className="vert" style={{ position:'relative' }}>
+                      <div className="vert" style={{ position:'relative', background:'#000', border:'0px solid yellow', }}>
                         
                         <InnerImageZoom src={getSrc(firstImage.gatsbyImageData)} objectFit="contain" loading={index === 0 ? "eager" : "lazy"} />
 
@@ -215,7 +210,9 @@ export default function Product({ data: { product, suggestions } }) {
 
 
           
-
+<div className="mobile" style={{}}>
+<GoBack />
+</div>
 
 <div className="flexbutt" style={{display:'flex', gap:'30px'}}>
 
@@ -224,7 +221,7 @@ export default function Product({ data: { product, suggestions } }) {
               {/* <Link to={product.productTypeSlug}>{product.productType}</Link> */}
               {/* <ChevronIcon size={12} /> */}
             </div>
-            <h1 className={header}>{title}</h1>
+            <h1 className={header} style={{margin:'1rem 0 2rem 0'}}>{title}</h1>
             <p className={productDescription}>{description}</p>
 
 
@@ -233,6 +230,11 @@ export default function Product({ data: { product, suggestions } }) {
             <h2 className={priceValue}>
              <strong style={{fontSize:'30px'}}>{price}</strong> <br /> High-Res Print Ready Art
             </h2>
+         
+
+            
+
+
             <fieldset className={optionsWrapper}>
               {hasVariants &&
                 options.map(({ id, name, values }, index) => (
@@ -253,7 +255,7 @@ export default function Product({ data: { product, suggestions } }) {
                 ))}
             </fieldset>
             <div className={addToCartStyle}>
-              <NumericInput
+              {/* <NumericInput
                 aria-label="Quantity"
                 onIncrement={() => setQuantity((q) => Math.min(q + 1, 20))}
                 onDecrement={() => setQuantity((q) => Math.max(1, q - 1))}
@@ -261,7 +263,7 @@ export default function Product({ data: { product, suggestions } }) {
                 value={quantity}
                 min="1"
                 max="20"
-              />
+              /> */}
               <AddToCart
                 variantId={productVariant.storefrontId}
                 quantity={quantity}
@@ -288,15 +290,60 @@ export default function Product({ data: { product, suggestions } }) {
 
             <Tabs className="infomenu" ß style={{minHeight:'20vh', width:'100%', maxWidth:'1000px',  border:'1px solid #222', borderRadius:'12px', overflow:'hidden', marginTop:'40px'}}>
     <TabList style={{width:'100%', border:'0px solid yellow',}}>
+    <Tab><div className="iconmenu"><HiOutlineScale/><span>Legal</span></div></Tab>
     <Tab><div className="iconmenu"><RiSecurePaymentLine/><span>Secure</span></div></Tab>
-      
       <Tab><div className="iconmenu"><CgRatio /><span>Specs</span></div></Tab>
       {/* <Tab><div className="iconmenu"><FiCamera /><span>Tech</span></div></Tab> */}
       <Tab><div className="iconmenu"><CgInfo /><span>FAQ</span></div></Tab>
-      <Tab><div className="iconmenu"><HiOutlineScale/><span>Legal</span></div></Tab>
+      
       
     </TabList>
  
+
+    <TabPanel style={{padding:'0 1.5rem', width:'100%'}}>
+    <strong style={{fontSize:'1.5rem'}}>Legal</strong><br /><br />
+
+
+<h4>There are two licensing options:</h4>
+<ol style={{margin:'1rem 3rem'}}>
+<li style={{}}>Personal Use License which includes printing rights. All use and restrictions are limited to private use only.</li>
+<br />
+<li style={{}}>Unlimited Royalty-Free License which includes all rights of the personal use plus commercial use.</li>
+</ol>
+
+<p style={{fontSize:'1.5rem', textAlign:'center', fontWeight:'bold'}}>That’s it.</p> 
+
+<blockquote className="frontquote" style={{width:'70%', margin:'0 auto'}}>
+<p>I believe art should be for everyone, not just snobby elite art collectors. It should be available to and priced for everyone. I just hope you enjoy the art.</p>
+<div style={{textAlign:'right', marginRight:'20%', marginTop:'10px'}}> – Todd
+</div></blockquote>
+
+           {/* <p>
+           Twilightscapes offers two types of license models: royalty-free ("RF") and rights-managed ("RM").</p>
+
+           <p>
+            Royalty-free means that the license fee is paid once and there is no need to pay additional royalties if the content is re-used. <br />Royalty-free content is licensed for worldwide, unlimited and perpetual use.</p>
+
+            <p>Rights-managed content is allowed to be printed in any format suited for private display. Rights-managed content cannot be distributed or used in public in any way that compromises Todd Lambert's abilities to resell the content.<br /><br />
+Rights-managed content is licensed for specific types of private use, and limits the use of the content to private use and display only.</p> */}
+
+            <p style={{textAlign:'center', fontSize:'130%', margin:'2rem 0'}}>
+              <Link to="/legal/"
+           
+            >View License Agreement</Link>
+            
+   
+           <br />
+
+            </p>
+
+
+
+           
+    </TabPanel>
+
+
+
     <TabPanel style={{padding:'0 1.5rem', width:'100%',}}>
             <strong>Secure and spam free</strong><br /><br />
             <p>All transactions are secured using the latest 128-bit SSL encryption. <br />
@@ -336,47 +383,57 @@ export default function Product({ data: { product, suggestions } }) {
 
     <TabPanel style={{padding:'0 1.5rem', width:'100%'}}>
             <strong>FAQ</strong><br /><br />
-            <p>
-            Do I get the file right away? Yes, upon completion of transaction<br /><br />
-            What if I lose the file, can I get another copy? Yes, you can retrieve the original file at any time.<br /><br />
-            Is there a watermark? No, it is removed on delivery<br /><br />
-            Can I print this for my office? Yes.<br /><br />
-            Can I print multiple copies? No. <br /><br />
-            Can I post it on Facebook (or any where online)? No.<br /><br />
-            Do I own this photo or can I claim it as mine? No.<br /><br />
-            </p>
 
-    </TabPanel>
+            <p style={{fontWeight:'bold', marginBottom:'0'}}>So, what do I get?</p>
+            <p style={{}}>Upon completion of your purchase, you will receive a ZIP file that contains the original high-resolution image in TIFF format. </p>
 
+            <p style={{fontWeight:'bold', marginBottom:'0'}}>What CAN I do with these images?</p>
+            <p style={{}}>Almost anything that you want. Print it for your house or office. Use it as a background or desktop for your phone, computer or TV. Make your holiday cards with it. Print it on your favorite coffee mug. You name it!</p>
 
-    <TabPanel style={{padding:'0 1.5rem', width:'100%'}}>
-           <strong>Legal</strong><br /><br />
+            <p style={{fontWeight:'bold', marginBottom:'0'}}>What CAN’T I do with these images?</p>
+            <p style={{}}>Basically, don’t be a Dick or a Karen. I am providing high-quality images that cost considerable amounts of both time and money to acquire. I offer these for a low price to encourage people to enjoy my art. <strong>Please don't share the images on the Internet.</strong></p>
 
-           <p>
-           Twilightscapes offers two types of license models: royalty-free ("RF") and rights-managed ("RM").</p>
+            <p style={{fontWeight:'bold', marginBottom:'0'}}>Do I get the file right away?</p>
+            <p style={{}}>Yes, upon completion of transaction</p>
 
-           <p>
-            Royalty-free means that the license fee is paid once and there is no need to pay additional royalties if the content is re-used. <br />Royalty-free content is licensed for worldwide, unlimited and perpetual use.</p>
+            <p style={{fontWeight:'bold', marginBottom:'0'}}>What if I lose the file, can I get another copy?</p>
+            <p style={{}}>Yes, you can retrieve the original file at any time. You will be sent an email with a link to retrieve.</p>
 
-            <p>Rights-managed content is allowed to be printed in any format suited for private display. Rights-managed content cannot be distributed or used in public in any way that compromises Todd Lambert's abilities to resell the content.<br /><br />
-Rights-managed content is licensed for specific types of private use, and limits the use of the content to private use and display only.</p>
+            <p style={{fontWeight:'bold', marginBottom:'0'}}>What about prints?</p>
+            <p style={{}}>I do offer exclusive hand-crafted prints for special circumstances - contact me with your needs if you’re interested. Otherwise, I provide two links to the best printer options available on the upper right-side of the photo pages. The links are affiliate links which provide me a portion of any sales, so I encourage you to print with these services.</p>
 
-            <p style={{textAlign:'center', fontSize:'130%'}}>
-              <Link to="/legal/"
-            state={{
-              modal: true
-            }}
-            >View License Agreement</Link>
+            <p style={{fontWeight:'bold', marginBottom:'0'}}>NFTs and image exclusivity</p>
+            <p style={{}}>If you wish to buy all rights to an image (exclusivity), all of my images are available for purchase in a non-fungible token version with the transfer of all ownership and the original RAW file included. The image will also be removed from further sales and retired.</p>
+
+            <p style={{fontWeight:'bold', marginBottom:'0'}}>Is there a watermark?</p>
+            <p style={{}}>No, it is removed on delivery</p>
+
+            <p style={{fontWeight:'bold', marginBottom:'0'}}>Can I print this for my office?</p>
+            <p style={{}}>Yes.</p>
+
+            <p style={{fontWeight:'bold', marginBottom:'0'}}>Can I print multiple copies?</p>
+            <p style={{}}>Yes, if they are for your private use and enjoyment. No, if you want to print them for sale, or for something that relates to being sold or given away.</p>
+
+            <p style={{fontWeight:'bold', marginBottom:'0'}}>Can I post it on Facebook or any where online?</p>
+            <p style={{}}>Simply answered, No. These images are for your private use and enjoyment only. I make my living on selling these images, so if you provide that to others, it then hurts my ability to further sell those images.</p>
+
+            <p style={{fontWeight:'bold', marginBottom:'0'}}>Do I own this photo, copyright or can I claim it as mine?</p>
+            <p style={{}}>No, the intellectual rights and copyrights are not transferred in any way and will remain the property of Todd Lambert.</p>
+
             
-   
-           
 
-            </p>
+            
+
+            {/* <p style={{fontWeight:'bold'}}></p>
+            <p style={{}}></p> */}
 
 
 
-           
+
     </TabPanel>
+
+
+   
 
   </Tabs>
 
@@ -416,11 +473,17 @@ Rights-managed content is licensed for specific types of private use, and limits
 
             <div className="flexcheek sidebart" style={{border:'0px solid yellow', width:'30%'}}>
 
-            <div style={{textAlign:'center', margin:'0 0 30px 0'}}>
-            <GoBack />
+            <div style={{textAlign:'center', margin:'10px 0 30px 0'}}>
+            {/* <Link to="/art">
+<button className="back">
+        <span className="icon -left" style={{paddingRight:'1rem'}}>
+        <BiLeftArrow />
+        </span> {" "} Go Back 
+</button>              
+</Link> */}<GoBack />
             </div>
 
-            <p style={{fontSize:'100%', margin:'0 0', padding:'0', lineHeight:'auto', textAlign:'center', fontWeight:'bold'}}>Turn this into a great print here:</p>
+            <p style={{fontSize:'100%', margin:'4rem 0.8rem 0', padding:'0', lineHeight:'auto', textAlign:'center', fontWeight:'bold'}}>Turn this into a great print here:</p>
             
             <div style={{display:'flex', gap:'10px',padding:'0 ', margin:'0 0 2rem 0', justifyContent:'center' }}>
 
@@ -455,16 +518,15 @@ Rights-managed content is licensed for specific types of private use, and limits
 <br />
 <h3 style={{fontSize:'130%', fontWeight:'bold', textAlign:'center'}}>Other projects by Todd</h3>
 
-<a href="https://urbanfetish.com" target="_blank" rel="noopener noreferrer" style={{textDecoration:'none', color:'inherit', lineHeight:'1.7rem'}}>
+<a href="https://twilightscapes.com" target="_blank" rel="noopener noreferrer" style={{textDecoration:'none', color:'inherit', lineHeight:'1.7rem'}}>
  
 
-
- <Image className="slider" alt="Urban Fetish photos" filename="urban-fetish-button.jpg" />
+<Image className="" alt="Todd Lambert Night photos" filename="twilightscapes-button.jpg" />
  <br />
  
- Take a walk on the wild side and follow along as Todd Lambert goes in search of the creepiest, freakiest, spookiest abandoned and desolate locations he can find. 
+ Experience a new style of landscape photography all through the eyes of Todd Lambert. Explore the unusual and see the Western States like you&apos;ve never seen them before.
  
- <h5 style={{textAlign:'center',}}>Visit UrbanFetish.com</h5></a>
+ <h5 style={{textAlign:'center',}}>Visit Twilightscapes.com</h5></a>
 
 
             </div>
@@ -488,8 +550,14 @@ Rights-managed content is licensed for specific types of private use, and limits
         <div style={{textAlign:'center', margin:'20px'}}>
           
     
+{/* <Link to="/art">
+<button className="back">
+        <span className="icon -left" style={{paddingRight:'1rem'}}>
+        <BiLeftArrow />
+        </span> {" "} Go Back 
+</button>              
+</Link> */}
 <GoBack />
-
 
 
             

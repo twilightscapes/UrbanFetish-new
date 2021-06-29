@@ -4,7 +4,7 @@ import { SkipNavContent, SkipNavLink } from "./skip-nav"
 import { Footer } from "./footer"
 import { Seo } from "./seo"
 import 'fontsource-hammersmith-one'
-import { Link } from 'gatsby'
+import { Link } from 'gatsby-plugin-modal-routing-3'
 import { ModalRoutingContext } from 'gatsby-plugin-modal-routing-3'
 import { AiOutlineClose } from "react-icons/ai"
 import twLogo from "../icons/urban-fetish-logo-pink.svg"
@@ -15,7 +15,7 @@ import { CartButton } from "./cart-button"
 import SearchIcon from "../icons/search"
 import Consent from './Consent'
 import Install from './install-discount'
-
+import Image from '../components/Image'
 
 export function Layout({ children }) {
   const { checkout, loading, didJustAddToCart } = React.useContext(StoreContext)
@@ -27,7 +27,7 @@ export function Layout({ children }) {
   }, 0)
 
   return (
-    <div style={{background:'#111'}}> 
+    <div style={{background:''}}> 
 <>
       <Seo />
       <SkipNavLink />
@@ -37,8 +37,8 @@ export function Layout({ children }) {
       <div>
         {modal ? (
           <>
-          <div style={{position:'fixed', right:'6vw', padding:'10px', fontSize:'40px'}}>
-          <Link to={closeTo}>
+          <div style={{position:'fixed', right:'6vw', padding:'10px', fontSize:'40px', background:'#111 !important', filter:'none', opacity:'1 !important'}}>
+          <Link state={{noScroll: true }} to={closeTo}>
             <AiOutlineClose />
           </Link>
           </div>
@@ -59,7 +59,7 @@ export function Layout({ children }) {
 
 <header>
 
-<Link to="/"><img id="logo" className="twlogo1" src={twLogo} alt="Urban Fetish Logo" style={{margin:'16px 0 40px 4vw', minWidth:'100px', maxWidth:'100px', height:'auto', padding:'0', border:'0px solid red', position:'fixed', zIndex:'2'}} /></Link>
+{/* <Link to="/"><img id="logo" className="twlogo1" src={twLogo} alt="Twilightscapes Logo" style={{margin:'16px 0 40px 4vw', minWidth:'100px', maxWidth:'100px', height:'auto', padding:'0', border:'0px solid red', position:'fixed', zIndex:'2'}} /></Link> */}
 
 
 
@@ -68,84 +68,92 @@ export function Layout({ children }) {
 
 
       <input type="checkbox" className="openSidebarMenu" id="openSidebarMenu" />
-  <label htmlFor="openSidebarMenu" className="sidebarIconToggle">
-  {/* <span className="txtshadow" style={{textShadow:'2px', color:'#fff',}}>MENU</span> */}
+  <label id="menuicon" htmlFor="openSidebarMenu" className="sidebarIconToggle">
+  <span className="txtshadow" style={{textShadow:'2px', color:'#fff',}}>MENU</span>
     <div className="spinner diagonal part-1"></div>
     <div className="spinner horizontal"></div>
     <div className="spinner diagonal part-2"></div>
   </label>
 
 
-  <div className="backdrop1" ></div>
+  <label htmlFor="openSidebarMenu" className="backdrop1" ></label>
 
 
    <div id="sidebarMenu">
   
-
-   
-   <div style={{display:'flex', justifyContent:'flex-start', color:'#fff', paddingLeft:'20px'}}>
-   
-   <Link to="/search" style={{display:'flex', verticalAlign:'center', marginTop:'12px', marginRight:'20px'}}>
-    <span><SearchIcon /></span>
-   </Link>
-
-  <div style={{marginTop:'5px'}}><CartButton quantity={quantity} /></div>
-     </div>
+{/* <div className="no-app promocode">
+30% OFF CODE: <span style={{color:'#FA02B7', fontWeight:'bold'}}>LoveTheNight</span>
+</div> */}
 
     <ul className="sidebarMenuInner">
 
-    {/* <li>
-              <a className="navbar-item txtshadow" href="https://twilightscapes.com/">
-                Home <span>Return to home</span>
-              </a>
-      </li> */}
+ <li style={{border:'none', marginBottom:'1rem'}}>
+<Link to="/"><img id="logo" className="twlogo" src={twLogo} alt="Twilightscapes Logo" title="Return To Homepage" style={{minWidth:'100px', maxWidth:'165px',}} /></Link>
+ </li>
 
-      <li>
-              {/* <Link className="navbar-item txtshadow" to="/nft/">
-                Gallery <span>View Photos</span>
-              </Link> */}
-              <Link className="navbar-item txtshadow" to="/nft/">
-                NFT Collectibles <span>Limited Editions</span>
-              </Link>
 
-      </li>
 
-      <li>
-              <Link className="navbar-item txtshadow" to="/vault/favorites/">
-                The Vault <span>View the full archives</span>
+
+ <li>
+              <Link state={{modal: true}} className="navbar-item txtshadow" to="/contact/">
+                Contact Me<span>Ask me anything!</span>
               </Link>
       </li>
 
 
-      <li>
+      <li className="carto">
+      <Link className="navbar-item txtshadow" to="/gear/">Gear Talk<span>What tools I use</span></Link>
+       </li>
+
+
+      <li className="carto">
               <Link className="navbar-item txtshadow" to="/about/">
                 About Me <span>Learn All About Me</span>
               </Link>
       </li>
 
-      <li>
-      <Link className="navbar-item txtshadow" to="/gear/">Gear Talk<span>What tools I use</span></Link>
-       </li>
 
-       <li>
-              <Link className="navbar-item txtshadow" to="/contact/">
-                Contact <span>Ask me anything!</span>
+      <li className="carto">
+              <Link className="navbar-item txtshadow" to="/nft/">
+                NFT Collectibles <span>Limited Editions</span>
               </Link>
       </li>
 
-      {/* <li>
-      <Link to="/search" >
-          <span>Search Catalog <SearchIcon /></span>
-        </Link>
-        </li> */}
+
+      <li className="carto">
+              <Link className="navbar-item txtshadow" to="/vault/favorites/">
+              The Vault <span>Full Photo archives</span>
+              </Link>
+      </li>
+
+
+
+      <li className="carto" style={{textAlign:'center'}}>
+              <Link className="navbar-item txtshadow" to="/gallery">
+      
+              View Photos <span style={{color:'#FA02B7',}}>start here</span>
+              </Link>
+      </li> 
+    
+      
+
+      <li className="carto" style={{border:'none', display:'flex', justifyContent:'space-around', verticalAlign:'center' }}>
+  
+   <Link to="/search" style={{marginRight:'20px', marginTop:'5px'}}>
+    <span className="carto"><SearchIcon /></span>
+   </Link>
+  <div className="carto"><CartButton quantity={quantity} /></div>
+
+
+        </li>
 
     
 
     </ul>
 
- <div className="has-app promocode">
-30% OFF CODE: <span style={{color:'#FA02B7', fontWeight:'bold'}}>LoveTheNight</span>
-</div>
+
+
+
 
 
   </div>
@@ -187,7 +195,7 @@ export function Layout({ children }) {
 
 
 
-<div className="toppad" style={{display:'block', height:'70px', border:'0px solid yellow'}}></div>
+{/* <div className="toppad" style={{display:'block', height:'20px', border:'0px solid yellow'}}></div> */}
 
 
 
@@ -197,6 +205,7 @@ export function Layout({ children }) {
       <Consent />
      <Install />
       <Footer />
+      
       </>
     </div>
     

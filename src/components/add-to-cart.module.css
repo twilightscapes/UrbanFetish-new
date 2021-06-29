@@ -3,7 +3,7 @@
   flex-direction: row;
   color: var(--text-color-inverted);
   background-color: var(--primary);
-  align-self: flex-end;
+  align-self: center;
   padding: var(--space-sm) var(--space-xl);
   border-radius: var(--radius-md);
   font-weight: var(--bold);
@@ -11,6 +11,12 @@
   height: var(--size-input);
   justify-content: center;
   transition: var(--transition);
+  font-weight: bold;
+  font-size: 140%;
+  text-shadow: 2px 2px 2px black;
+  /* max-width:100%;
+  width:auto;
+  margin:0 auto; */
 }
 
 .addToCart:hover {

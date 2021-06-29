@@ -53,7 +53,7 @@ export default function CartPage() {
               sometimes it’s hard to choose — maybe this helps:
             </p>
             <Link to="/search?s=BEST_SELLING" className={emptyStateLink}>
-              View trending Images
+              View trending Twilightscapes
             </Link>
           </div>
         ) : (
@@ -66,7 +66,7 @@ export default function CartPage() {
               <thead>
                 <tr>
                   <th className={imageHeader}>Image</th>
-                  <th className={productHeader}>Photograph:</th>
+                  <th className={productHeader}>Your New Twilightscape:</th>
                   <th className={collapseColumn}>Price</th>
                   <th></th>
                   <th className={[totals, collapseColumn].join(" ")}>Total</th>
