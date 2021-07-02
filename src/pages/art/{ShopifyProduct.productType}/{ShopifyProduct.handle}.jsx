@@ -331,16 +331,20 @@ export default function Product({ data: { product, suggestions } }) {
 <br />
 <h3 style={{fontSize:'130%', fontWeight:'bold', textAlign:'center'}}>Other projects by Todd</h3>
 
-<a href="https://urbanfetish.com" target="_blank" rel="noopener noreferrer" style={{textDecoration:'none', color:'inherit', lineHeight:'1.7rem'}}>
+<a href="https://twilightscapes.com" target="_blank" rel="noopener noreferrer" style={{textDecoration:'none', color:'inherit', lineHeight:'1.7rem'}}>
  
 
 
- <Image className="slider" alt="Urban Fetish photos" filename="urban-fetish-button.jpg" />
+ <Image className="slider" alt="Twilightscapes photos" filename="twilightscapes-button.jpg" />
  <br />
  
- Take a walk on the wild side and follow along as Todd Lambert goes in search of the creepiest, freakiest, spookiest abandoned and desolate locations he can find. 
+ Experience a new style of landscape photography all through the eyes of Todd Lambert. Explore the unusual and see the Western States like you've never seen them before.
+
+
+
+
  
- <h5 style={{textAlign:'center',}}>Visit UrbanFetish.com</h5></a>
+ <h5 style={{textAlign:'center',}}>Visit Twilightscapes.com</h5></a>
 
 
             </div>
