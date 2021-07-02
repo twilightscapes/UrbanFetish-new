@@ -128,11 +128,11 @@ height: 0;
 //   }
 // `
 // export default function nftPage({ data }) {
-  export default function nftPage({}) {
+  export default function aboutPage({}) {
   return (
 <>
 <Helmet>
-<meta name="twitter:image:src" content={'https://twilightscapes.com/default-og-image.jpg'} />
+
 
 
 </Helmet>
@@ -144,9 +144,27 @@ height: 0;
 
     
 
-<Seo title={`About Todd Lambert`} />
+{/* <Seo title={`About Todd Lambert`} /> */}
 
-    
+<div className="vidbox" style={{position:'relative'}}>
+
+    <ScrollAnimation animateIn="bounceInDown" animateOut="" initiallyVisible={false} animateOnce={false} animatePreScroll={true} delay={0} style={{position:'absolute', zIndex:'1', top:'100px',  fontSize:'10vw', color:'white', display:'flex', justifyContent:'center', alignItems:'center', border:'0px solid blue', width:'100vw'}}>
+      <div className="txtshadow-header letter">
+    </div>
+</ScrollAnimation>
+
+<div className="video-background">
+    <div className="video-foreground">
+      <iframe className="" src="https://www.youtube.com/embed/X7H_0AqV2ew?controls=0&amp;showinfo=0&amp;rel=0&amp;autoplay=1&amp;loop=1&amp;mute=1&amp;playlist=X7H_0AqV2ew" frameBorder="0" allowFullScreen></iframe>
+    </div>
+</div>
+
+
+</div>
+
+<br />
+<br />
+
     <section className="about outer intro section" style={{paddingTop:'0', overflow:'hidden', marginTop:'1vh'}}>
     
     <ScrollAnimation animateIn="bounceInUp" animateOut="bounceInDown" animateOnce={true} delay={1000}>
@@ -266,7 +284,7 @@ Todd Lambert on location</span></div>
  <div className="" style={{width:'80%', margin:'0 auto',}}>
  <h2 style={{textAlign:'center',  fontSize:'180%', margin:'2rem auto 0 auto', padding:'0',}}>[Narrator Voice]</h2>
  
- <p>Tonight, we look at Urban Fetish by Todd Lambert. Todd is best-known for his incredible night photography and unusual photo locations.</p>
+ <p>Tonight, we look at Twilightscapes by Todd Lambert. Todd is best-known for his incredible night photography and unusual photo locations.</p>
  
  <h3 style={{textAlign:'center',}}>Now, Lets Go Behind The Photos</h3>
  

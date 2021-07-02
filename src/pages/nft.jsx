@@ -4,29 +4,29 @@ import { Layout } from "../components/layout"
 import { ProductListing } from "../components/product-listing"
 import { Link } from "gatsby"
 import { Seo } from "../components/seo"
-import { Helmet } from "react-helmet"
+// import { Helmet } from "react-helmet"
 import { RiArrowDownLine, RiArrowRightSLine, RiStarLine, RiSendPlane2Line } from "react-icons/ri"
 import { IoLogoVercel } from "react-icons/io5"
 import { BsCircleFill } from "react-icons/bs"
 import { FaSquareFull } from "react-icons/fa"
 
 
-import { MoreButton } from "../components/more-button"
-import { title } from "../pages/index.module.css"
+// import { MoreButton } from "../components/more-button"
+// import { title } from "../pages/index.module.css"
 
 
 
-import {
-  container,
-  intro,
-  callOut,
-  callToAction,
-  deployButton,
-} from "./index.module.css"
+// import {
+//   container,
+//   intro,
+//   callOut,
+//   callToAction,
+//   deployButton,
+// } from "./index.module.css"
 
 import Image from '../components/Image'
 import ScrollAnimation from 'react-animate-on-scroll'
-import { GiPlainArrow } from 'react-icons/gi'
+// import { GiPlainArrow } from 'react-icons/gi'
 
 import styled from 'styled-components'
 
@@ -137,17 +137,21 @@ export const query = graphql`
   return (
 <>
 
-<Helmet>
-<meta name="twitter:image:src" content="https://twilightscapes.com/follow-me-into-the-night-promo.jpg" />
-</Helmet>
+
+
+
 
 <CustomBox>
 
     <Layout className="nft-page" style={{position:'relative'}}>
 
     
-    
-<Seo title={`NFT Collectible Photography Nightscape Photos`} />
+    <Seo
+          title={`NFT Collectible Photography`}
+          description={`We have the NFT you are looking for - Check it out`}
+          image={'https://twilightscapes.com/default-og-image-blank.jpg'}
+        />
+
 
 
 {/* <div className="video-background">
@@ -170,6 +174,15 @@ export const query = graphql`
   </div> */}
 
  
+
+<div className="vidbox">
+<div className="video-background">
+    <div className="video-foreground">
+      
+      <iframe className="" src="https://www.youtube.com/embed/vWNkRK6-oU4?controls=0&amp;showinfo=0&amp;rel=0&amp;autoplay=1&amp;loop=1&amp;mute=1&amp;playlist=vWNkRK6-oU4" frameBorder="0" allowFullScreen></iframe>
+    </div>
+</div>
+</div>
 
   
 
@@ -497,51 +510,51 @@ justifyContent: 'center',
 
 <div style={{display:'flex', justifyContent:'center', position:'absolute', top:'0', textAlign:'center', width:'90%', margin:'0 auto'}}>
 
-<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={1000} style={{zIndex:'1' }}>
+<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={100} style={{zIndex:'1' }}>
 <span className="letter">G</span>
 </ScrollAnimation>
-<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={1200} style={{zIndex:'1' }}>
+<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={200} style={{zIndex:'1' }}>
 <span className="letter">a</span>
 </ScrollAnimation>
-<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={1300} style={{zIndex:'1' }}>
+<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={300} style={{zIndex:'1' }}>
 <span className="letter">s</span>
 </ScrollAnimation>
 
-<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={1400} style={{zIndex:'1', marginLeft:'2rem' }}>
+<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={400} style={{zIndex:'1', marginLeft:'2rem' }}>
 <span className="letter">S</span>
 </ScrollAnimation>
-<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={1500} style={{zIndex:'1' }}>
+<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={500} style={{zIndex:'1' }}>
 <span className="letter">t</span>
 </ScrollAnimation>
-<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={1600} style={{zIndex:'1' }}>
+<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={600} style={{zIndex:'1' }}>
 <span className="letter">a</span>
 </ScrollAnimation>
-<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={1700} style={{zIndex:'1' }}>
+<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={700} style={{zIndex:'1' }}>
 <span className="letter">t</span>
 </ScrollAnimation>
-<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={1800} style={{zIndex:'1' }}>
+<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={800} style={{zIndex:'1' }}>
 <span className="letter">i</span>
 </ScrollAnimation>
-<ScrollAnimation animateIn="jackInTheBox"  animateOncTe={true} delay={1900} style={{zIndex:'1' }}>
+<ScrollAnimation animateIn="jackInTheBox"  animateOncTe={true} delay={900} style={{zIndex:'1' }}>
 <span className="letter">o</span>
 </ScrollAnimation>
-<ScrollAnimation animateIn="jackInTheBox"  animateOncTe={true} delay={2000} style={{zIndex:'1' }}>
+<ScrollAnimation animateIn="jackInTheBox"  animateOncTe={true} delay={1000} style={{zIndex:'1' }}>
 <span className="letter">n</span>
 </ScrollAnimation>
-<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={2100} style={{zIndex:'1' }}>
+<ScrollAnimation animateIn="jackInTheBox"  animateOnce={true} delay={1100} style={{zIndex:'1' }}>
 <span className="letter">s</span>
 </ScrollAnimation>
 
 </div>
 
-<ScrollAnimation animateIn="fadeIn"  animateOnce={true} delay={2500} style={{zIndex:'1', position:'absolute', bottom:'10px', width:'100%', margin:'0 auto' }}>
+<ScrollAnimation animateIn="fadeIn"  animateOnce={true} delay={2000} style={{zIndex:'1', position:'absolute', bottom:'10px', width:'100%', margin:'0 auto' }}>
 <div style={{textAlign:'center', fontSize:'140%',}}>coming soon</div>
 </ScrollAnimation>
 
 
 
 
-<div className=" kenburns-bottom-left" style={{zIndex:'',}}><Image className="nftimage" alt="Coming Soon" filename="Texaco.jpeg" style={{backgroundSize:'cover', zIndex:'', }} /></div>
+<div className=" kenburns-left" style={{zIndex:'',}}><Image className="nftimage" alt="Coming Soon" filename="gas-header.jpg" style={{backgroundSize:'cover', zIndex:'', }} /></div>
 
 </div>
 

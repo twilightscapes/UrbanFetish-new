@@ -16,6 +16,8 @@ import SearchIcon from "../icons/search"
 import Consent from './Consent'
 import Install from './install-discount'
 import Image from '../components/Image'
+import { BiLeftArrow } from "react-icons/bi"
+import { navigate } from "gatsby";
 
 export function Layout({ children }) {
   const { checkout, loading, didJustAddToCart } = React.useContext(StoreContext)
@@ -87,18 +89,27 @@ export function Layout({ children }) {
 
     <ul className="sidebarMenuInner">
 
- <li style={{border:'none', marginBottom:'1rem'}}>
+ <li className="carto" style={{border:'none', marginBottom:'1rem'}}>
 <Link to="/"><img id="logo" className="twlogo" src={twLogo} alt="Twilightscapes Logo" title="Return To Homepage" style={{minWidth:'100px', maxWidth:'165px',}} /></Link>
+ </li>
+ <li className="carta" style={{border:'none', marginBottom:'1rem'}}>
+ <a className="" onClick={()=>navigate(-1)}><img id="logo" className="twlogo" src={twLogo} alt="Twilightscapes Logo" title="Return To Homepage" style={{minWidth:'100px', maxWidth:'',}} /></a>
  </li>
 
 
 
 
- <li>
-              <Link state={{modal: true}} className="navbar-item txtshadow" to="/contact/">
-                Contact Me<span>Ask me anything!</span>
-              </Link>
-      </li>
+ <li className="carto">
+ <Link state={{modal: true}} className="navbar-item txtshadow" to="/contact/">
+Contact Me<span>Ask me anything!</span>
+</Link>
+</li>
+<li className="carta">
+ <Link state={{modal: true}} className="navbar-item txtshadow" to="/contact/">
+Contact Me<span>Ordering Questions?</span>
+</Link>
+</li>
+
 
 
       <li className="carto">
@@ -128,14 +139,23 @@ export function Layout({ children }) {
 
 
 
-      {/* <li className="carto" style={{textAlign:'center'}}>
-              <Link className="navbar-item txtshadow" to="/gallery">
+      <li className="carto" style={{textAlign:'center'}}>
+              <Link className="navbar-item txtshadow" to="/galleries/">
       
               View Photos <span style={{color:'#FA02B7',}}>start here</span>
               </Link>
-      </li>  */}
+      </li> 
     
-      
+      <li className="carta">
+      <div style={{display:'flex', justifyContent:'center'}}>
+<button className="back" onClick={()=>navigate(-1)}>
+        {/* <span className="icon -left" style={{paddingRight:'1rem'}}>
+                <BiLeftArrow />
+        </span>  */}
+        {" "} Continue Choosing 
+</button>
+</div>
+      </li>
 
       <li className="carto" style={{border:'none', display:'flex', justifyContent:'space-around', verticalAlign:'center' }}>
   
