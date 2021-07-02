@@ -88,7 +88,7 @@ export default function IndexPage() {
 <div style={{textAlign:'right', marginRight:'20%', marginTop:'10px'}}> – Todd Lambert
 </div></blockquote>
 
-<div style={{width:'40%',  padding:'3vw'}}><Image alt="Todd Lambert hanging with friends" filename="todd-profile.jpg" className="" /></div>
+<div style={{width:'40%',  padding:'3vw'}}><Image alt="Todd Lambert hanging with friends" filename="todd-yeti.jpg" className="" /></div>
 
 </div>
 
