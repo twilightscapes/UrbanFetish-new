@@ -18,6 +18,17 @@ import ScrollAnimation from 'react-animate-on-scroll'
 import styled from "styled-components"
 const CustomBox = styled.div`
 
+
+.intro:before{
+	content: "A Fetish For Decay";
+position:absolute;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size:5vw; color:#f8f8fc; text-shadow: 12px 7px 15px 12px black;
+}
+
+
 @media (min-width: 58em) {
 
 }
@@ -44,9 +55,9 @@ export default function IndexPage() {
     <CustomBox>
     <Layout>
     <Seo
-          title={`Gonna wind up working in a gas station`}
-          description={`Frank Zappa had it all right`}
-          image={'https://twilightscapes.com/default-og-image-blank.jpg'}
+          title={`Urban Fetish - photography of abandoned urban exploration`}
+          description={`Night long exposure photography in remote abandoned locations urban exploration`}
+          image={'https://urbanfetish.com/default-og-image-blank.jpg'}
         />
 {/* <Menu /> */}
 
