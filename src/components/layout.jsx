@@ -14,7 +14,7 @@ import { ImArrowRight } from "react-icons/im"
 import { CartButton } from "./cart-button"
 import SearchIcon from "../icons/search"
 import Consent from './Consent'
-import Install from './install-discount'
+// import Install from './install-discount'
 import Image from '../components/Image'
 import { BiLeftArrow } from "react-icons/bi"
 import { navigate } from "gatsby";
@@ -223,7 +223,7 @@ Contact Me<span>Ordering Questions?</span>
       
       <br /><br />
       <Consent />
-     <Install />
+     {/* <Install /> */}
       <Footer />
       
       </>
