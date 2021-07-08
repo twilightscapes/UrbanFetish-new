@@ -132,20 +132,8 @@ justifyContent: 'center',
 </div>
 
 
-    <div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', margin:'0 0 2rem 0'}}>
-
-<p style={{textAlign:'center', margin:'2rem 0 0 0'}}>GET ALL YOUR FAVORITES NOW</p>
-
-<div style={{display:'flex', border:'1px solid #666', padding:'1rem', margin:'0 3% 0 3%', borderRadius:'12px', height:'', textAlign:'center', justifyContent:'space-around', alignContent:'center', alignItems:'center', maxWidth:'800px', gap:'20px', background:''}}>
-
-  <span style={{fontSize:'70px', color:'white', transform:'rotate()', lineHeight:'80%'}}>PICK ANY <br /><span style={{letterSpacing:''}}>THREE</span></span>
-
-  <span style={{fontSize:'40px', color:'#FA02B7', lineHeight:'90%'}}>
-  ONLY PAY<br /> FOR TWO
-  </span>
-</div>
-</div>
-
+    
+<br /><br />
     <div className="frontprod">
       <ProductListing products={data.shopifyCollection.products} className="frontprod" />
 </div>
@@ -163,6 +151,22 @@ justifyContent: 'center',
                 <RiSendPlane2Line />
               </span>
             </Link>
+
+            <br /><br />
+
+            <div style={{display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', margin:'0 0 2rem 0'}}>
+
+<p style={{textAlign:'center', margin:'2rem 0 0 0'}}>GET ALL YOUR FAVORITES NOW</p>
+
+<div style={{display:'flex', border:'1px solid #666', padding:'1rem', margin:'0 3% 0 3%', borderRadius:'12px', height:'', textAlign:'center', justifyContent:'space-around', alignContent:'center', alignItems:'center', maxWidth:'800px', gap:'20px', background:''}}>
+
+  <span style={{fontSize:'70px', color:'white', transform:'rotate()', lineHeight:'80%'}}>PICK ANY <br /><span style={{letterSpacing:''}}>THREE</span></span>
+
+  <span style={{fontSize:'40px', color:'#FA02B7', lineHeight:'90%'}}>
+  ONLY PAY<br /> FOR TWO
+  </span>
+</div>
+</div>
 
 
    </Layout></CustomBox>

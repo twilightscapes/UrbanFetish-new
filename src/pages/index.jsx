@@ -79,12 +79,12 @@ export default function IndexPage() {
   </p>
 
 
-  <p>I love the rush that you get when you're standing where someone hadn't stepped in years. Putting together the puzzle of other's lives from the remnants that have survived time. I feel sort of like an alternative-archeologist sometimes.</p>
+  
 
 <div className="" style={{display:'flex'}}>
 
       <blockquote className="frontquote" style={{width:'60%'}}>
-      <p>The night is misunderstood and often feared, but the night can be a world of wonder and an orchestra of colors. Finding yourself at 3am in a graveyard filming flowers; some may see that as weird, but for me, it's pure tranquility. </p>
+      <p>I love the rush that you get when you're standing where someone hadn't stepped in years. Putting together the puzzle of other's lives from the remnants that have survived time. I feel sort of like an alternative-archeologist sometimes. </p>
 <div style={{textAlign:'right', marginRight:'20%', marginTop:'10px'}}> – Todd Lambert
 </div></blockquote>
 
