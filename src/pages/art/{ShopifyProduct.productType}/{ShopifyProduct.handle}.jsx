@@ -163,7 +163,7 @@ export default function Product({ data: { product, suggestions } }) {
                 aria-label="gallery"
                 aria-describedby="instructions"
               >
-                <ul className={productImageList} style={{height:'100%'}}>
+                <ul className={productImageList} style={{minHeight:'100vh'}}>
                   {images.map((image, index) => (
                     <li
                       key={`product-image-${image.id}`}
@@ -172,7 +172,7 @@ export default function Product({ data: { product, suggestions } }) {
                     >
                       
 
-                      <div className="vert" style={{ position:'relative', background:'#000', border:'0px solid yellow', }}>
+                      <div className="vert" style={{ position:'relative', background:'', border:'0px solid yellow', height:'' }}>
                         
                         <InnerImageZoom src={getSrc(firstImage.gatsbyImageData)} objectFit="contain" loading={index === 0 ? "eager" : "lazy"} />
 
@@ -220,8 +220,8 @@ export default function Product({ data: { product, suggestions } }) {
               {/* <Link to={product.productTypeSlug}>{product.productType}</Link> */}
               {/* <ChevronIcon size={12} /> */}
             </div>
-            <h1 className={header} style={{margin:'1rem 0 2rem 0'}}>{title}</h1>
-            <p className={productDescription}>{description}</p>
+            <h1 className={header} style={{margin:'-5rem 0 2rem 0'}}>{title}</h1>
+            <p className={productDescription} style={{paddingTop:'2rem'}}>{description}</p>
 
 
 
@@ -292,7 +292,7 @@ export default function Product({ data: { product, suggestions } }) {
 
             <div className="flexcheek sidebart" style={{border:'0px solid yellow', width:'30%'}}>
 
-            <div style={{textAlign:'center', margin:'10px 0 30px 0'}}>
+            <div className="mobilefix" style={{textAlign:'center',}}>
            <GoBack />
             </div>
 

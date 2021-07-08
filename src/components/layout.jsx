@@ -13,10 +13,10 @@ import { Toast } from "./toast"
 import { ImArrowRight } from "react-icons/im"
 import { CartButton } from "./cart-button"
 import SearchIcon from "../icons/search"
-import Consent from './Consent'
+// import Consent from './Consent'
 // import Install from './install-discount'
-import Image from '../components/Image'
-import { BiLeftArrow } from "react-icons/bi"
+// import Image from '../components/Image'
+// import { BiLeftArrow } from "react-icons/bi"
 import { navigate } from "gatsby";
 
 export function Layout({ children }) {
@@ -222,7 +222,7 @@ Contact Me<span>Ordering Questions?</span>
       <SkipNavContent className="intro">{children}</SkipNavContent>
       
       <br /><br />
-      <Consent />
+      {/* <Consent /> */}
      {/* <Install /> */}
       <Footer />
       

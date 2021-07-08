@@ -371,6 +371,8 @@ height:0;
 
 
 
+.mobilefix{ margin:-5rem 0 30px 0; z-index:1; position:relative;}
+
 .flexbutt {display:flex; }
 
 .flexcheek {width:50%}
@@ -380,6 +382,9 @@ height:0;
   .flexbutt{flex-direction: column !important;}
 .flexcheek{width:100% !important;}
 .mobile{display: block;}
+.dd ul{min-height:inherit !important;}
+.flexcheek h1, .mobilefix{ margin-top:2rem !important;}
+
 	}
 
 
