@@ -61,7 +61,7 @@ const NewsletterPage = () => (
 
              <div className="signbox" style={{display:'',}}>
 
-               <label style={{color:'#fff'}} For="email">
+               <label style={{color:'#fff'}} htmlFor="email">
                  <input type="email" name="email" required={true}
                       placeholder="your@email.com"
                       style={{}}/></label>

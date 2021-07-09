@@ -78,6 +78,7 @@ export default function Product({ data: { product, suggestions } }) {
     priceRangeV2,
     title,
     description,
+    descriptionHtml,
     images,
     images: [firstImage],
   } = product
@@ -220,8 +221,8 @@ export default function Product({ data: { product, suggestions } }) {
               {/* <Link to={product.productTypeSlug}>{product.productType}</Link> */}
               {/* <ChevronIcon size={12} /> */}
             </div>
-            <h1 className={header} style={{margin:'-5rem 0 2rem 0'}}>{title}</h1>
-            <p className={productDescription} style={{paddingTop:'2rem'}}>{description}</p>
+            <h1 className={header} style={{margin:'0 0 2rem 0'}}>{title}</h1>
+            <p className={productDescription} style={{paddingTop:'2rem'}} dangerouslySetInnerHTML={{ __html: descriptionHtml }} />
 
 
 
@@ -388,6 +389,7 @@ export const query = graphql`
     product: shopifyProduct(id: { eq: $id }) {
       title
       description
+      descriptionHtml
       productType
       productTypeSlug: gatsbyPath(
         filePath: "/art/{ShopifyProduct.productType}"
