@@ -222,7 +222,7 @@ export default function Product({ data: { product, suggestions } }) {
               {/* <ChevronIcon size={12} /> */}
             </div>
             <h1 className={header} style={{margin:'0 0 2rem 0'}}>{title}</h1>
-            <p className={productDescription} style={{paddingTop:'2rem'}} dangerouslySetInnerHTML={{ __html: descriptionHtml }} />
+            <div className={productDescription} style={{paddingTop:'2rem'}} dangerouslySetInnerHTML={{ __html: descriptionHtml }} />
 
 
 
